@@ -8,252 +8,639 @@
   <meta property="og:title" content="Extrafari | Tailor-made African Safaris">
   <meta property="og:description" content="Extrafari designs private, expertly guided safaris across East and Southern Africa. Great Migration, Okavango Delta, gorilla trekking and more.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#26392a">
+  <meta name="theme-color" content="#000000">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html" aria-label="Extrafari home">
-        <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
-          <circle cx="20" cy="20" r="20" fill="#c8862b"/>
-          <path d="M8 18c3-6 10-8 16-6 4 1 7 4 8 7-3 1-8 0-12 0s-9 1-12-1z" fill="#26392a"/>
-          <path d="M19 19l1 13M20 20l3-4" stroke="#26392a" stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M6 33h28" stroke="#26392a" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        Extrafari
-      </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
-      <nav class="nav" id="site-nav" aria-label="Primary">
-        <a href="safaris.html">Safaris</a>
-        <a href="destinations.html">Destinations</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a class="btn btn--primary btn--small" href="contact.html">Plan your safari</a>
+    <div class="bar">
+      <div class="container bar-inner">
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mega-menu">
+          <span class="pill-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </span>
+          <span class="label"><span class="label-open">Menu</span><span class="label-close">Close</span></span>
+        </button>
+        <a class="brand" href="index.html" aria-label="Extrafari home">
+          <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M8 18c3-6 10-8 16-6 4 1 7 4 8 7-3 1-8 0-12 0s-9 1-12-1z" fill="currentColor"/>
+            <path d="M19 19l1 13M20 20l3-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M6 33h28" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span class="brand__word">Extrafari</span>
+        </a>
+        <div class="header-right">
+          <a class="search" href="safaris.html" aria-label="Search safaris">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          </a>
+          <a class="btn btn--primary" href="contact.html">Enquire now</a>
+        </div>
+      </div>
+      <nav class="mega" id="mega-menu" aria-label="Primary">
+        <div class="container">
+          <div class="mega__inner">
+            <div class="mega__col">
+              <h4>Destinations</h4>
+              <a href="destinations.html#kenya">Kenya</a>
+              <a href="destinations.html#tanzania">Tanzania</a>
+              <a href="destinations.html#botswana">Botswana</a>
+              <a href="destinations.html#south-africa">South Africa</a>
+              <a href="destinations.html#namibia">Namibia</a>
+              <a href="destinations.html#zambia">Zambia</a>
+              <a href="destinations.html#uganda-rwanda">Uganda &amp; Rwanda</a>
+              <a href="destinations.html#when-to-go">When to go</a>
+            </div>
+            <div class="mega__col">
+              <h4>Safaris</h4>
+              <a href="safaris.html#great-migration">Great Migration Classic <span class="sub">Kenya &amp; Tanzania</span></a>
+              <a href="safaris.html#okavango-chobe">Okavango &amp; Chobe Waterways <span class="sub">Botswana</span></a>
+              <a href="safaris.html#big-five-luxury">Big Five &amp; Cape Town <span class="sub">South Africa</span></a>
+              <a href="safaris.html#gorillas-savanna">Gorillas &amp; Savanna <span class="sub">Uganda &amp; Rwanda</span></a>
+              <a href="safaris.html#namibia-desert">Namibia Desert &amp; Etosha <span class="sub">Namibia</span></a>
+              <a href="safaris.html">See all safaris</a>
+            </div>
+            <div class="mega__col">
+              <h4>Journeys</h4>
+              <a href="safaris.html?style=classic">Classic safaris</a>
+              <a href="safaris.html?style=luxury">Luxury lodges</a>
+              <a href="safaris.html?style=adventure">Walking &amp; adventure</a>
+              <a href="safaris.html?style=family">Family safaris</a>
+              <a href="safaris.html?style=honeymoon">Honeymoons</a>
+            </div>
+            <div class="mega__col">
+              <h4>Experiences</h4>
+              <a href="index.html#experiences">Game drives</a>
+              <a href="index.html#experiences">Mokoro &amp; boat safaris</a>
+              <a href="index.html#experiences">Hot-air ballooning</a>
+              <a href="index.html#experiences">Walking safaris</a>
+              <a href="index.html#experiences">Gorilla trekking</a>
+              <a href="index.html#experiences">Star beds</a>
+            </div>
+            <div class="mega__col">
+              <h4>About Extrafari</h4>
+              <a href="about.html">Our story</a>
+              <a href="about.html#conservation">Impact &amp; conservation</a>
+              <a href="about.html#team">Our guides</a>
+              <a href="contact.html#faq">FAQ</a>
+              <a href="contact.html">Contact</a>
+            </div>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero">
-      <div class="hero__sun" aria-hidden="true"></div>
-      <svg class="hero__art" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0 240 Q120 200 240 226 T480 220 T720 232 T960 214 T1200 230 T1440 218 L1440 320 L0 320 Z" fill="#2b1c12" opacity="0.9"/>
-        <path d="M0 268 Q180 246 360 262 T720 258 T1080 266 T1440 254 L1440 320 L0 320 Z" fill="#1f1a17"/>
-        <defs>
-          <g id="acacia" fill="#1f1a17" stroke="#1f1a17" stroke-linecap="round">
-            <path d="M10 44 C20 22 60 14 92 24 C108 30 114 42 110 50 C90 57 30 58 10 44 Z" stroke="none"/>
-            <path d="M58 50 L56 100" stroke-width="5"/>
-            <path d="M57 62 L80 47 M57 68 L34 50" stroke-width="4"/>
-          </g>
-        </defs>
-        <use href="#acacia" transform="translate(980 120) scale(1.35)"/>
-        <use href="#acacia" transform="translate(220 170) scale(0.8)"/>
-        <g fill="#1f1a17">
-          <path d="M600 268 l6 -16 l4 16 l6 -20 l10 -6 l2 10 l8 4 l-2 14 l4 20 l-8 0 l-2 -12 l-6 0 l-2 12 l-8 0 l0 -10 l-6 0 l-2 10 l-8 0 z"/>
-          <path d="M660 270 l4 -12 l4 10 l4 -14 l8 -6 l2 8 l6 4 l0 12 l2 16 l-6 0 l-2 -10 l-4 0 l-2 10 l-6 0 l0 -8 l-4 0 l-2 8 l-6 0 z"/>
-        </g>
-      </svg>
-      <div class="container hero__content">
-        <span class="eyebrow" style="color:#ffd58a">Tailor-made African safaris</span>
-        <h1>Go further than the guidebook.</h1>
-        <p>Extrafari designs private, expertly guided safaris across East and Southern Africa, from the Great Migration to the Okavango Delta, built around the way you like to travel.</p>
-        <div class="hero__actions">
-          <a class="btn btn--light" href="safaris.html">Explore safaris</a>
-          <a class="btn btn--ghost-light" href="contact.html">Start planning</a>
+
+    <!-- Hero: full screen, centred wordmark, video control, coordinates + intro -->
+    <section class="hero module" id="top">
+      <div class="hero__bg" aria-hidden="true">
+        <svg class="hero__art" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <g id="acacia" fill="#0a0a0a" stroke="#0a0a0a" stroke-linecap="round">
+              <path d="M10 44 C20 22 60 14 92 24 C108 30 114 42 110 50 C90 57 30 58 10 44 Z" stroke="none"/>
+              <path d="M58 50 L56 100" stroke-width="5"/>
+              <path d="M57 62 L80 47 M57 68 L34 50" stroke-width="4"/>
+            </g>
+          </defs>
+          <path d="M0 250 Q160 214 320 236 T640 230 T960 226 T1280 236 T1440 228 L1440 320 L0 320 Z" fill="#0a0a0a" opacity=".85"/>
+          <use href="#acacia" transform="translate(1080 128) scale(1.2)"/>
+          <use href="#acacia" transform="translate(180 178) scale(0.7)"/>
+        </svg>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__center">
+          <p class="subtitle">Welcome to</p>
+          <h1 class="hero-title hero__title">Extrafari</h1>
+        </div>
+        <div class="hero__player" aria-hidden="false">
+          <span class="line"></span>
+          <button class="hero__play" type="button" data-state="playing" aria-label="Pause background video">
+            <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="7" y="5" width="3.5" height="14" rx="1"/><rect x="13.5" y="5" width="3.5" height="14" rx="1"/></svg>
+            <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l11 7-11 7z"/></svg>
+          </button>
+          <span class="line"></span>
+        </div>
+        <div class="hero__foot">
+          <p class="hero__coords">1.4061&deg; S, 35.0078&deg; E</p>
+          <p class="hero__intro">Extrafari takes you on private, expertly guided journeys through the most iconic wild places of East and Southern Africa.</p>
         </div>
       </div>
     </section>
 
-    <section class="container">
-      <div class="trust" aria-label="Why travel with Extrafari">
-        <div class="trust__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
-          <div><strong>Fully bonded &amp; insured</strong><span>Your booking is protected from deposit to departure.</span></div>
-        </div>
-        <div class="trust__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
-          <div><strong>Guides who live here</strong><span>Local, licensed guides with decades in the field.</span></div>
-        </div>
-        <div class="trust__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-5-7-11a7 7 0 0114 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          <div><strong>Private, tailor-made</strong><span>No fixed departures. Every itinerary is built for you.</span></div>
-        </div>
-        <div class="trust__item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22c5-3 8-7 8-12a8 8 0 10-16 0c0 5 3 9 8 12z"/><path d="M12 6v8M8 10c2 0 4 2 4 4 0-2 2-4 4-4"/></svg>
-          <div><strong>Conservation first</strong><span>A share of every trip funds wildlife and community projects.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Signature journeys</span>
-          <h2>Safaris our guests keep recommending</h2>
-          <p class="lede">Every trip is a starting point. Tell us what you want to see and we will shape the route, camps and pace around you.</p>
-        </div>
-        <div class="grid grid--3">
-          <article class="card">
-            <div class="card__media scene scene--mara"><span class="tag">Kenya &amp; Tanzania</span></div>
-            <div class="card__body">
-              <h3>Great Migration Classic</h3>
-              <p class="card__meta">10 days &middot; Masai Mara, Serengeti, Ngorongoro Crater</p>
-              <p>Follow the herds across the Mara River and the Serengeti plains, then descend into the crater for one of Africa's densest wildlife encounters.</p>
-              <div class="card__foot">
-                <span class="price">From $6,950<small>per person sharing</small></span>
-                <a class="btn btn--secondary btn--small" href="safaris.html#great-migration">Details</a>
-              </div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__media scene scene--okavango"><span class="tag">Botswana</span></div>
-            <div class="card__body">
-              <h3>Okavango &amp; Chobe Waterways</h3>
-              <p class="card__meta">8 days &middot; Okavango Delta, Moremi, Chobe River</p>
-              <p>Glide by mokoro through lily-covered channels, track wild dogs in Moremi and watch elephants crowd the Chobe at sunset.</p>
-              <div class="card__foot">
-                <span class="price">From $8,400<small>per person sharing</small></span>
-                <a class="btn btn--secondary btn--small" href="safaris.html#okavango-chobe">Details</a>
-              </div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__media scene scene--gorilla"><span class="tag">Uganda &amp; Rwanda</span></div>
-            <div class="card__body">
-              <h3>Gorillas &amp; Savanna</h3>
-              <p class="card__meta">9 days &middot; Bwindi, Queen Elizabeth, Volcanoes NP</p>
-              <p>An hour with a mountain gorilla family in the Bwindi forest, then tree-climbing lions and boat safaris on the Kazinga Channel.</p>
-              <div class="card__foot">
-                <span class="price">From $7,800<small>per person sharing</small></span>
-                <a class="btn btn--secondary btn--small" href="safaris.html#gorillas-savanna">Details</a>
-              </div>
-            </div>
-          </article>
-        </div>
-        <p class="center" style="margin-top:32px"><a class="btn btn--primary" href="safaris.html">See all safaris</a></p>
-      </div>
-    </section>
-
-    <section class="section section--alt">
-      <div class="container split">
-        <div class="split__art scene scene--namib" aria-hidden="true"></div>
-        <div>
-          <span class="eyebrow">The Extrafari difference</span>
-          <h2>Small groups, big landscapes, no compromises</h2>
-          <p>We are a specialist operator, not a marketplace. Our planners have walked the camps we recommend, and our guides are the reason guests come back.</p>
-          <ul class="check-list">
-            <li>Private vehicles and guides on every safari, never shared with strangers</li>
-            <li>Hand-picked camps and lodges we visit and re-check every season</li>
-            <li>24/7 in-country support from our Nairobi, Arusha and Cape Town teams</li>
-            <li>Transparent pricing with park fees, transfers and most meals included</li>
-          </ul>
-          <a class="btn btn--secondary" href="about.html">Meet the team</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--dark">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow" style="color:#e6b45a">How it works</span>
-          <h2>From first idea to first game drive</h2>
-        </div>
-        <div class="steps">
-          <div class="step"><h3>Tell us your dream</h3><p>Share dates, budget and must-sees in a short enquiry or a call with a planner.</p></div>
-          <div class="step"><h3>Get a tailored proposal</h3><p>Within three working days you receive a day-by-day itinerary with camps, costs and options.</p></div>
-          <div class="step"><h3>Refine together</h3><p>We adjust pace, lodges and activities until it fits. No pressure, no fixed templates.</p></div>
-          <div class="step"><h3>Travel with support</h3><p>Meet your guide at the airport and enjoy round-the-clock support until you fly home.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Guest stories</span>
-          <h2>What travellers say</h2>
-        </div>
-        <div class="grid grid--3">
-          <div class="quote">
-            <span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <blockquote>"Our guide Joseph found a leopard with cubs on the first morning. Every detail, from the tented camp to the bush breakfast, was perfect."</blockquote>
-            <cite>Hannah &amp; Tom, Great Migration Classic</cite>
-          </div>
-          <div class="quote">
-            <span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <blockquote>"We travelled with two teenagers and a grandparent. Extrafari balanced game drives, rest days and a bit of adventure for everyone."</blockquote>
-            <cite>The Okafor family, Family Safari Kenya</cite>
-          </div>
-          <div class="quote">
-            <span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <blockquote>"The gorilla trek was the most moving hour of my life. Planning was effortless and the in-country team answered every message within minutes."</blockquote>
-            <cite>Priya, Gorillas &amp; Savanna</cite>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" style="padding-top:0">
-      <div class="container">
-        <div class="cta">
+    <!-- Text with portrait image -->
+    <section class="intro module bg-green pad-lg" id="discover">
+      <div class="container intro__inner">
+        <div class="intro__text">
           <div>
-            <h2>Ready to plan your safari?</h2>
-            <p>Tell us when you would like to travel and we will send a tailored proposal within three working days.</p>
+            <p class="subtitle subtitle--sand">We are Extrafari</p>
+            <h2 class="t-h1">Go further than the guidebook</h2>
           </div>
-          <a class="btn btn--light" href="contact.html">Start your enquiry</a>
+          <div class="intro__desc">
+            <p>Extrafari is an owner-run safari operator with teams in Nairobi, Arusha and Cape Town. We plan and operate every trip ourselves, so the person who designs your safari is one call away from the guide who leads it.</p>
+            <p>Our safaris are private, tailor-made and built around the way you like to travel. With our own guides and vehicles in East Africa and long-standing partner camps across Southern Africa, we take you to the places we know best, in the season that suits them.</p>
+          </div>
         </div>
+        <div class="intro__image">
+          <div class="intro__portrait scene scene--laikipia">
+            <svg class="intro__scribble" viewBox="0 0 60 320" aria-hidden="true"><path d="M30 0 C10 60 50 120 30 180 S10 300 30 320" stroke="#fff" stroke-width="10" fill="none" stroke-linecap="round"/></svg>
+            <span class="intro__tag">#WeAreExtrafari</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Country carousel -->
+    <section class="countries module bg-sand pad-lg" id="destinations">
+      <div class="container">
+        <div class="countries__head">
+          <h2 class="t-h2">Our safari destinations</h2>
+          <p>We operate in 8 African countries, with more than 60 hand-picked camps and lodges promising private, wild game viewing, comfort without compromise and a full immersion in nature and local culture.</p>
+          <a class="btn btn--arrow" href="destinations.html"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Discover our destination guide</span></a>
+        </div>
+        <div class="countries__tabs" role="tablist" aria-label="Choose a country" id="country-tabs"></div>
+      </div>
+      <div class="slider" id="country-slider">
+        <div class="slider__track">
+          <article class="slide" data-name="Kenya">
+            <div class="slide__media scene scene--mara"><div class="veil"></div><h3 class="slide__name hero-title">Kenya</h3></div>
+            <div class="slide__desc">
+              <p>Home of the original East African safari. The Masai Mara delivers the Great Migration river crossings, while private conservancies in Laikipia offer night drives, walking and horseback safaris away from the crowds.</p>
+              <div class="slide__ctrl"><div class="arrows"><button type="button" data-dir="-1" aria-label="Previous country"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button type="button" data-dir="1" aria-label="Next country"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div><a class="btn btn--primary" href="destinations.html#kenya">Kenya</a></div>
+            </div>
+          </article>
+          <article class="slide" data-name="Tanzania">
+            <div class="slide__media scene scene--serengeti"><div class="veil"></div><h3 class="slide__name hero-title">Tanzania</h3></div>
+            <div class="slide__desc">
+              <p>The Serengeti's endless plains host the migration for most of the year, from calving in the south to the Grumeti crossings. Add the Ngorongoro Crater, baobab-studded Tarangire and the beaches of Zanzibar.</p>
+              <div class="slide__ctrl"><div class="arrows"><button type="button" data-dir="-1" aria-label="Previous country"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button type="button" data-dir="1" aria-label="Next country"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div><a class="btn btn--primary" href="destinations.html#tanzania">Tanzania</a></div>
+            </div>
+          </article>
+          <article class="slide" data-name="Botswana">
+            <div class="slide__media scene scene--okavango"><div class="veil"></div><h3 class="slide__name hero-title">Botswana</h3></div>
+            <div class="slide__desc">
+              <p>Heed the call of the wild in the Okavango Delta, where the floods arrive in the dry season and draw wildlife to its channels and islands, then meet Africa's largest elephant herds on the Chobe riverfront.</p>
+              <div class="slide__ctrl"><div class="arrows"><button type="button" data-dir="-1" aria-label="Previous country"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button type="button" data-dir="1" aria-label="Next country"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div><a class="btn btn--primary" href="destinations.html#botswana">Botswana</a></div>
+            </div>
+          </article>
+          <article class="slide" data-name="Namibia">
+            <div class="slide__media scene scene--namib"><div class="veil"></div><h3 class="slide__name hero-title">Namibia</h3></div>
+            <div class="slide__desc">
+              <p>Africa's most extraordinary landscapes: the towering dunes of Sossusvlei, desert-adapted elephant and rhino in Damaraland, and the floodlit waterholes of Etosha. Rare, remote and made for road journeys.</p>
+              <div class="slide__ctrl"><div class="arrows"><button type="button" data-dir="-1" aria-label="Previous country"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button type="button" data-dir="1" aria-label="Next country"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div><a class="btn btn--primary" href="destinations.html#namibia">Namibia</a></div>
+            </div>
+          </article>
+          <article class="slide" data-name="South Africa">
+            <div class="slide__media scene scene--kruger"><div class="veil"></div><h3 class="slide__name hero-title">South Africa</h3></div>
+            <div class="slide__desc">
+              <p>Big Five game viewing in the Sabi Sand and Kruger paired with Cape Town, the winelands and the Garden Route. Malaria-free reserves and superb value make it ideal for first safaris and families.</p>
+              <div class="slide__ctrl"><div class="arrows"><button type="button" data-dir="-1" aria-label="Previous country"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button type="button" data-dir="1" aria-label="Next country"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div><a class="btn btn--primary" href="destinations.html#south-africa">South Africa</a></div>
+            </div>
+          </article>
+          <article class="slide" data-name="Zambia">
+            <div class="slide__media scene scene--zambezi"><div class="veil"></div><h3 class="slide__name hero-title">Zambia</h3></div>
+            <div class="slide__desc">
+              <p>From the thunder of Victoria Falls to walking safaris in South Luangwa and canoeing the Lower Zambezi past hippo pods, endless adventure awaits in the birthplace of the walking safari.</p>
+              <div class="slide__ctrl"><div class="arrows"><button type="button" data-dir="-1" aria-label="Previous country"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button type="button" data-dir="1" aria-label="Next country"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div><a class="btn btn--primary" href="destinations.html#zambia">Zambia</a></div>
+            </div>
+          </article>
+          <article class="slide" data-name="Rwanda">
+            <div class="slide__media scene scene--rwanda"><div class="veil"></div><h3 class="slide__name hero-title">Rwanda</h3></div>
+            <div class="slide__desc">
+              <p>A land of staggering beauty, home to half the world's mountain gorillas in Volcanoes National Park and a restored savanna teeming with wildlife in Akagera.</p>
+              <div class="slide__ctrl"><div class="arrows"><button type="button" data-dir="-1" aria-label="Previous country"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button type="button" data-dir="1" aria-label="Next country"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div><a class="btn btn--primary" href="destinations.html#uganda-rwanda">Rwanda</a></div>
+            </div>
+          </article>
+          <article class="slide" data-name="Uganda">
+            <div class="slide__media scene scene--gorilla"><div class="veil"></div><h3 class="slide__name hero-title">Uganda</h3></div>
+            <div class="slide__desc">
+              <p>Gorilla trekking in the Bwindi Impenetrable Forest, chimpanzees in Kibale, tree-climbing lions in Queen Elizabeth National Park and boat safaris on the Kazinga Channel.</p>
+              <div class="slide__ctrl"><div class="arrows"><button type="button" data-dir="-1" aria-label="Previous country"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button type="button" data-dir="1" aria-label="Next country"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div><a class="btn btn--primary" href="destinations.html#uganda-rwanda">Uganda</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="module bg-green pad-lg" id="offer">
+      <div class="container">
+        <div class="stats">
+          <div class="stat">
+            <div class="stat__icon"><svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 40h44M12 40V26l18-12 18 12v14M22 40V30h16v10"/></svg></div>
+            <h5 class="t-h5">Camps</h5>
+            <p>More than 60 hand-picked camps and lodges, visited and re-checked every season</p>
+          </div>
+          <div class="stat">
+            <div class="stat__icon"><svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 8l14 2 8 10-2 10 6 8-6 12-10 2-6-8-10-4-4-12 6-10z"/></svg></div>
+            <h5 class="t-h5">Countries</h5>
+            <p>Eight African destinations, each chosen for exceptional wildlife and wild places</p>
+          </div>
+          <div class="stat">
+            <div class="stat__icon"><svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 38h46l-4-12H18l-4 6H8zM12 38v6M46 38v6M22 26v-8h14v8"/><circle cx="18" cy="44" r="3"/><circle cx="42" cy="44" r="3"/></svg></div>
+            <h5 class="t-h5">Private</h5>
+            <p>A private guide and vehicle on every safari, never shared with strangers</p>
+          </div>
+          <div class="stat">
+            <div class="stat__icon"><svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34l22-10 22 6-22 6zM30 24v-8l6-2M20 40l10-4 10 4"/></svg></div>
+            <h5 class="t-h5">Bespoke</h5>
+            <p>Every itinerary is designed from scratch around your dates, pace and budget</p>
+          </div>
+          <div class="stat">
+            <div class="stat__icon"><svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="30" cy="20" r="8"/><path d="M14 48c0-9 7-14 16-14s16 5 16 14"/></svg></div>
+            <h5 class="t-h5">Community</h5>
+            <p>Conservancy partnerships and local guides mean your safari gives back</p>
+          </div>
+        </div>
+        <div class="stats__foot">
+          <span class="line"></span>
+          <a class="btn btn--primary" href="contact.html">Plan your safari</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full bleed journeys -->
+    <section class="fullbleed module" id="journeys">
+      <div class="fullbleed__bg scene scene--forest scene--no-tree" aria-hidden="true"></div>
+      <div class="fullbleed__veil" aria-hidden="true"></div>
+      <div class="fullbleed__content">
+        <p class="subtitle">Our custom-designed journeys</p>
+        <h2 class="t-h2">Tailor-made itineraries for every traveller</h2>
+        <p>We are excited to take you on a journey to experience the sights and sounds of our Africa. Unique scenery, wildlife and cultures are waiting to be discovered. Our signature itineraries are intended to inspire, and every one can be tailored to suit your needs. It is time to let your safari dreams run wild.</p>
+        <a class="btn btn--arrow" href="safaris.html"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Explore our safaris</span></a>
+      </div>
+    </section>
+
+    <!-- Experiences carousel -->
+    <section class="exp module bg-brown pad-lg" id="experiences">
+      <div class="exp__head">
+        <div>
+          <p class="subtitle subtitle--sand">Our experiences</p>
+          <h2 class="t-h2">Experience real, raw nature</h2>
+          <p class="lede">Travelling is about more than the places you visit and the things you will see. It is about people, culture, wildlife and history. With Extrafari you will walk, boat, float, fly, drive, ride, trek and track your way through a world of adventures.</p>
+        </div>
+        <div class="exp__link">
+          <span class="vline"></span>
+          <a class="btn btn--arrow" href="safaris.html"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Explore all experiences</span></a>
+        </div>
+      </div>
+      <div class="exp__stage" id="exp-carousel">
+        <div class="exp__track">
+          <div class="exp__item">
+            <div class="exp__circle"><div class="scene scene--mara" style="position:absolute;inset:0"></div></div>
+            <div class="exp__card">
+              <h4>Game drives</h4>
+              <p>Get closer to thrilling wildlife interactions and see creatures big and small on morning and afternoon game drives with your private guide.</p>
+              <a class="btn btn--arrow" href="safaris.html"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Game drives</span></a>
+              <div class="where"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5-7-11a7 7 0 0114 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Kenya, Tanzania, Botswana, South Africa, Zambia, Namibia</span></div>
+            </div>
+          </div>
+          <div class="exp__item">
+            <div class="exp__circle"><div class="scene scene--okavango" style="position:absolute;inset:0"></div></div>
+            <div class="exp__card">
+              <h4>Mokoro &amp; boat safaris</h4>
+              <p>Explore the Okavango Delta by mokoro, gliding peacefully along lily-covered channels, or watch elephants crowd the Chobe from the water at sunset.</p>
+              <a class="btn btn--arrow" href="safaris.html#okavango-chobe"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Water safaris</span></a>
+              <div class="where"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5-7-11a7 7 0 0114 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Botswana, Zambia, Uganda</span></div>
+            </div>
+          </div>
+          <div class="exp__item">
+            <div class="exp__circle"><div class="scene scene--serengeti" style="position:absolute;inset:0"></div></div>
+            <div class="exp__card">
+              <h4>Hot-air ballooning</h4>
+              <p>Be a bird for an hour. Drift over the Mara or Serengeti at dawn for an unparalleled perspective on the herds below, then land to a champagne bush breakfast.</p>
+              <a class="btn btn--arrow" href="safaris.html#great-migration"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Balloon safaris</span></a>
+              <div class="where"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5-7-11a7 7 0 0114 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Kenya, Tanzania, Namibia</span></div>
+            </div>
+          </div>
+          <div class="exp__item">
+            <div class="exp__circle"><div class="scene scene--night" style="position:absolute;inset:0"></div></div>
+            <div class="exp__card">
+              <h4>Star beds</h4>
+              <p>Sleep out under the African night sky on a raised platform in the bush. Nothing is quite as thrilling, or as romantic, on safari.</p>
+              <a class="btn btn--arrow" href="safaris.html?style=honeymoon"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Star beds</span></a>
+              <div class="where"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5-7-11a7 7 0 0114 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Kenya, Botswana, Namibia</span></div>
+            </div>
+          </div>
+          <div class="exp__item">
+            <div class="exp__circle"><div class="scene scene--luangwa" style="position:absolute;inset:0"></div></div>
+            <div class="exp__card">
+              <h4>Walking safaris</h4>
+              <p>Slow down and pay attention to the smaller details of the bush on foot, following armed scouts and expert guides in the home of the walking safari.</p>
+              <a class="btn btn--arrow" href="safaris.html#zambia-walking"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Walking safaris</span></a>
+              <div class="where"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5-7-11a7 7 0 0114 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Zambia, Kenya, Tanzania, Namibia</span></div>
+            </div>
+          </div>
+          <div class="exp__item">
+            <div class="exp__circle"><div class="scene scene--gorilla" style="position:absolute;inset:0"></div></div>
+            <div class="exp__card">
+              <h4>Gorilla trekking</h4>
+              <p>Spend an hour with a mountain gorilla family in the forests of Bwindi or Volcanoes National Park. The most moving hour many of our guests have ever spent.</p>
+              <a class="btn btn--arrow" href="safaris.html#gorillas-savanna"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Gorilla trekking</span></a>
+              <div class="where"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5-7-11a7 7 0 0114 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Uganda, Rwanda</span></div>
+            </div>
+          </div>
+          <div class="exp__item">
+            <div class="exp__circle"><div class="scene scene--laikipia" style="position:absolute;inset:0"></div></div>
+            <div class="exp__card">
+              <h4>Conservation experiences</h4>
+              <p>Track rhino on foot with conservancy rangers, visit community projects and see how your safari helps protect the land and the people who live on it.</p>
+              <a class="btn btn--arrow" href="about.html#conservation"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Conservation</span></a>
+              <div class="where"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5-7-11a7 7 0 0114 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Kenya, Namibia, Rwanda</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="carousel-ctrl">
+            <span class="cur" data-cur>01</span><span class="sep">/</span><span class="total" data-total>07</span>
+            <button type="button" data-dir="-1" aria-label="Previous experience"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+            <button type="button" data-dir="1" aria-label="Next experience"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabs: why travel with Extrafari -->
+    <section class="module bg-brown pad-lg" id="why" style="padding-bottom:0">
+      <div class="container two-col tabs__head">
+        <div>
+          <p class="subtitle">Travel with purpose</p>
+          <h2 class="t-h2">Why travel with Extrafari?</h2>
+        </div>
+        <div>
+          <p class="muted">Our camps strike the right balance of comfort and authenticity, and stay true to the soul and spirit of each destination. Private conservancies with caps on guest numbers mean fewer vehicles and people, and more intimate encounters with wildlife in their natural habitat.</p>
+        </div>
+      </div>
+      <div class="tabs-desktop" id="why-tabs">
+        <div class="tabs__rule"><span></span></div>
+        <div class="container">
+          <div class="tabs__bar" role="tablist" aria-label="Why travel with Extrafari">
+            <button type="button" class="tab-nav" data-tabdir="-1" aria-label="Previous tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <button type="button" role="tab" aria-selected="true" aria-controls="tab-destinations" id="tabbtn-destinations">Destinations</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="tab-wildlife" id="tabbtn-wildlife">Wildlife</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="tab-guides" id="tabbtn-guides">Guides</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="tab-camps" id="tabbtn-camps">Camps</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="tab-culture" id="tabbtn-culture">Culture</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="tab-travel" id="tabbtn-travel">Travel</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="tab-impact" id="tabbtn-impact">Impact</button>
+            <button type="button" class="tab-nav" data-tabdir="1" aria-label="Next tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+        <div class="bg-black">
+          <div class="tabpanel is-active" id="tab-destinations" role="tabpanel" aria-labelledby="tabbtn-destinations">
+            <div class="container tabpanel__inner">
+              <div class="tabpanel__media scene scene--okavango"></div>
+              <div class="tabpanel__text">
+                <h2 class="t-h2">Iconic wild destinations</h2>
+                <p>Every Extrafari destination offers a whole new world of environments, habitats, cultures, sights and sounds. From the Mara to the Okavango and the Namib, we take you to the places our guides know best, in the season that suits them.</p>
+                <a class="btn btn--arrow" href="destinations.html"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Discover Africa</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="tabpanel" id="tab-wildlife" role="tabpanel" aria-labelledby="tabbtn-wildlife">
+            <div class="container tabpanel__inner">
+              <div class="tabpanel__media scene scene--mara"></div>
+              <div class="tabpanel__text">
+                <h2 class="t-h2">Best wildlife experiences</h2>
+                <p>Private conservancies, low vehicle numbers and off-road access put you closer to the action. Whether you are a family, a photographer, a big-cat enthusiast or a birder, we build the safari around what you most want to see.</p>
+                <a class="btn btn--arrow" href="safaris.html"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Africa's iconic wildlife</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="tabpanel" id="tab-guides" role="tabpanel" aria-labelledby="tabbtn-guides">
+            <div class="container tabpanel__inner">
+              <div class="tabpanel__media scene scene--laikipia"></div>
+              <div class="tabpanel__text">
+                <h2 class="t-h2">Guides who live here</h2>
+                <p>Our guides hold the highest available certifications in their countries and many have been with us for more than a decade. They are the reason guests come back, and we hire locally so their knowledge of the wild is the best there is.</p>
+                <a class="btn btn--arrow" href="about.html#team"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Our safari guides</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="tabpanel" id="tab-camps" role="tabpanel" aria-labelledby="tabbtn-camps">
+            <div class="container tabpanel__inner">
+              <div class="tabpanel__media scene scene--kruger"></div>
+              <div class="tabpanel__text">
+                <h2 class="t-h2">Camps chosen for their guiding</h2>
+                <p>We pick camps and lodges for their position, their guiding and their light footprint, not their thread count. Small, intimate properties spread across vast private areas mean wildlife from your deck as well as from the vehicle.</p>
+                <a class="btn btn--arrow" href="safaris.html?style=luxury"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>How we choose camps</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="tabpanel" id="tab-culture" role="tabpanel" aria-labelledby="tabbtn-culture">
+            <div class="container tabpanel__inner">
+              <div class="tabpanel__media scene scene--rwanda"></div>
+              <div class="tabpanel__text">
+                <h2 class="t-h2">Cultural exploration</h2>
+                <p>Each safari honours the cultures and traditions of its area. Village visits are hosted by community partners rather than staged for visitors, and the camps we favour employ and source locally.</p>
+                <a class="btn btn--arrow" href="about.html#conservation"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Community experiences</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="tabpanel" id="tab-travel" role="tabpanel" aria-labelledby="tabbtn-travel">
+            <div class="container tabpanel__inner">
+              <div class="tabpanel__media scene scene--zambezi"></div>
+              <div class="tabpanel__text">
+                <h2 class="t-h2">Seamless, trusted travel</h2>
+                <p>From the airport meet-and-greet to light-aircraft transfers between camps, our in-country teams handle every step. A 24-hour support line and flying-doctor cover travel with you from start to finish.</p>
+                <a class="btn btn--arrow" href="contact.html#faq"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Our services</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="tabpanel" id="tab-impact" role="tabpanel" aria-labelledby="tabbtn-impact">
+            <div class="container tabpanel__inner">
+              <div class="tabpanel__media scene scene--gorilla"></div>
+              <div class="tabpanel__text">
+                <h2 class="t-h2">Shared impact</h2>
+                <p>Conservancy fees on our safaris go directly to landowning communities, and every booking supports ranger training and school bursaries near the parks we use. Wild places stay wild when they pay their way.</p>
+                <a class="btn btn--arrow" href="about.html#conservation"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Impact</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tabs-mobile container" id="why-accordion"></div>
+    </section>
+
+    <!-- Card listing carousel: recognition -->
+    <section class="module bg-white pad-lg" id="recognition">
+      <div class="container">
+        <div class="two-col cards__head">
+          <div>
+            <p class="subtitle">Recognised and accredited</p>
+            <h2 class="t-h3">Extrafari accreditations</h2>
+          </div>
+          <div>
+            <p class="muted">Licensed, bonded and a member of the industry bodies that hold African safari operators to the highest standards of safety, service and responsible travel.</p>
+            <a class="btn btn--arrow dark" href="about.html"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>See all</span></a>
+          </div>
+        </div>
+        <div id="award-carousel" style="margin-top:80px;overflow:hidden">
+          <div class="carousel-ctrl" style="margin:0 0 20px">
+            <span class="cur" data-cur>01</span><span class="sep">/</span><span class="total" data-total>06</span>
+            <button type="button" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+            <button type="button" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+          <div class="cards__track">
+            <div class="award"><div class="award__img"><div class="award__badge"><small>Member</small>Kenya Association of Tour Operators</div></div><div class="award__text"><h6 class="t-h6">KATO member</h6><p>Bonded East Africa operator</p></div></div>
+            <div class="award"><div class="award__img"><div class="award__badge"><small>Member</small>Tanzania Association of Tour Operators</div></div><div class="award__text"><h6 class="t-h6">TATO member</h6><p>Licensed for the northern circuit</p></div></div>
+            <div class="award"><div class="award__img"><div class="award__badge"><small>Member</small>African Travel &amp; Tourism Association</div></div><div class="award__text"><h6 class="t-h6">ATTA member</h6><p>Pan-African travel trade body</p></div></div>
+            <div class="award"><div class="award__img"><div class="award__badge"><small>Certified</small>Kenya Professional Safari Guides Association</div></div><div class="award__text"><h6 class="t-h6">KPSGA guides</h6><p>Silver and Gold level lead guides</p></div></div>
+            <div class="award"><div class="award__img"><div class="award__badge"><small>Cover</small>Flying Doctors Emergency Evacuation</div></div><div class="award__text"><h6 class="t-h6">Evacuation cover</h6><p>Included on every safari</p></div></div>
+            <div class="award"><div class="award__img"><div class="award__badge"><small>Partner</small>Community Conservancies</div></div><div class="award__text"><h6 class="t-h6">Conservancy partner</h6><p>Mara and Laikipia conservancies</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Text plus two images: impact -->
+    <section class="module bg-green pad-lg" id="impact">
+      <div class="container impact__inner">
+        <div class="impact__imgs" aria-hidden="true">
+          <div class="impact__img1 scene scene--laikipia"></div>
+          <div class="impact__img2 scene scene--gorilla scene--no-tree"></div>
+        </div>
+        <div class="impact__text">
+          <h3 class="t-h3">Our impact ethos</h3>
+          <p>Our journeys change lives. Not just yours, but those of our guides, the communities we work with and the ecosystems we travel through. We favour community-owned conservancies and camps that employ locally, and a share of every trip funds wildlife protection and education near the parks you visit. Responsible, sustainable, inspiring.</p>
+          <a class="btn btn--arrow" href="about.html#conservation"><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span>Read about our impact</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="module bg-white reviews pad-lg" id="reviews">
+      <div class="container">
+        <div class="two-col">
+          <div>
+            <p class="subtitle">Guest experiences</p>
+            <h2 class="t-h3">Stories from fellow safari-goers</h2>
+            <div class="rating" aria-label="Rated 4.9 out of 5"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>4.9 / 5</span></div>
+          </div>
+          <div>
+            <p class="muted">Guests consistently praise Extrafari for exceptional wildlife viewing, dedicated guides and effortless planning. Read what fellow travellers have to say about their journeys with us, or <a class="inline" href="contact.html">ask us for references</a>.</p>
+          </div>
+        </div>
+        <div class="reviews__grid">
+          <article class="review">
+            <h6 class="t-h6">Leopard on the first morning</h6>
+            <p>"Our guide Joseph found a leopard with cubs on the first morning. Every detail, from the tented camp to the bush breakfast, was perfect. This was our third safari and by far the best organised."</p>
+            <cite>Hannah &amp; Tom, UK</cite>
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </article>
+          <article class="review">
+            <h6 class="t-h6">Something for three generations</h6>
+            <p>"We travelled with two teenagers and a grandparent. Extrafari balanced game drives, rest days and a bit of adventure for everyone. The in-country team answered every message within minutes."</p>
+            <cite>The Okafor family, USA</cite>
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </article>
+          <article class="review">
+            <h6 class="t-h6">The most moving hour of my life</h6>
+            <p>"The gorilla trek was the most moving hour of my life. Planning was effortless, permits were handled a year ahead, and the savanna days afterwards were the perfect contrast."</p>
+            <cite>Priya, Singapore</cite>
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ready CTA -->
+    <section class="module bg-black ready" id="ready">
+      <div class="ready__mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40"><path d="M8 18c3-6 10-8 16-6 4 1 7 4 8 7-3 1-8 0-12 0s-9 1-12-1z" fill="#fff"/><path d="M19 19l1 13M20 20l3-4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M6 33h28" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </div>
+      <div class="container ready__inner">
+        <p class="subtitle subtitle--sand">Let's plan your next journey</p>
+        <h2 class="ready__title">Ready?</h2>
+        <p>When we say we are there every step of the way, we mean it. From planning the perfect route to private transfers between camps and a guide waiting at arrivals, we are with you on the ground, at your side, 24-7, from start to finish. Ready to take the road less travelled? Contact our planners to design an unforgettable safari.</p>
+        <a class="btn btn--primary" href="contact.html">Enquire now</a>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="module bg-white newsletter pad-lg" id="newsletter">
+      <div class="container newsletter__inner">
+        <div>
+          <h2 class="t-h3">Need some inspiration?</h2>
+        </div>
+        <form id="newsletter-form" novalidate>
+          <p>Be inspired by the latest news, seasonal highlights and new camps from Extrafari. Subscribe to our newsletter.</p>
+          <div class="form-row">
+            <div class="form-group"><input class="form-control" id="nl-first" name="first_name" type="text" placeholder=" " required><label for="nl-first">First name</label></div>
+            <div class="form-group"><input class="form-control" id="nl-last" name="last_name" type="text" placeholder=" " required><label for="nl-last">Surname</label></div>
+          </div>
+          <div class="form-group"><input class="form-control" id="nl-email" name="email" type="email" placeholder=" " required><label for="nl-email">Email address</label></div>
+          <div class="form-group"><input class="form-control" id="nl-country" name="country" type="text" placeholder=" "><label for="nl-country">Country</label></div>
+          <div class="honeypot" aria-hidden="true"><label for="nl-website">Leave empty</label><input id="nl-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <button class="btn btn--primary" type="submit">Subscribe</button>
+          <div class="form-status" id="newsletter-status" role="status" aria-live="polite"></div>
+        </form>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <a class="brand" href="index.html">Extrafari</a>
-          <p>Tailor-made African safaris, guided by people who know these landscapes as home.</p>
-        </div>
-        <div>
-          <h4>Safaris</h4>
+      <div class="footer-social" aria-label="Social media">
+        <a href="#" aria-label="Extrafari on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.3H7.4V14h2.8v8h3.3z"/></svg></a>
+        <a href="#" aria-label="Extrafari on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="Extrafari on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.5 8.5H3.6V21h2.9V8.5zM5 3.5a1.7 1.7 0 100 3.4 1.7 1.7 0 000-3.4zM21 13.4c0-3.4-1.8-5.2-4.4-5.2-1.9 0-2.8 1-3.3 1.8V8.5h-2.9V21h2.9v-6.2c0-1.6.3-3.2 2.3-3.2s2.1 1.9 2.1 3.3V21H21v-7.6z"/></svg></a>
+        <a href="#" aria-label="Extrafari on YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 8.2c-.2-1.3-.9-2.1-2.2-2.3C17.6 5.5 12 5.5 12 5.5s-5.6 0-7.8.4C2.9 6.1 2.2 6.9 2 8.2 1.7 10 1.7 12 1.7 12s0 2 .3 3.8c.2 1.3.9 2.1 2.2 2.3 2.2.4 7.8.4 7.8.4s5.6 0 7.8-.4c1.3-.2 2-1 2.2-2.3.3-1.8.3-3.8.3-3.8s0-2-.3-3.8zM10 15V9l5.2 3L10 15z"/></svg></a>
+      </div>
+      <div class="footer-cols">
+        <nav aria-label="About">
+          <h6>About Extrafari</h6>
           <ul>
-            <li><a href="safaris.html?style=classic">Classic safaris</a></li>
-            <li><a href="safaris.html?style=luxury">Luxury lodges</a></li>
-            <li><a href="safaris.html?style=adventure">Walking &amp; adventure</a></li>
-            <li><a href="safaris.html?style=family">Family safaris</a></li>
-            <li><a href="safaris.html?style=honeymoon">Honeymoons</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Destinations</h4>
-          <ul>
-            <li><a href="destinations.html#kenya">Kenya</a></li>
-            <li><a href="destinations.html#tanzania">Tanzania</a></li>
-            <li><a href="destinations.html#botswana">Botswana</a></li>
-            <li><a href="destinations.html#south-africa">South Africa</a></li>
-            <li><a href="destinations.html#namibia">Namibia</a></li>
-            <li><a href="destinations.html#uganda-rwanda">Uganda &amp; Rwanda</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <ul>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="about.html#conservation">Conservation</a></li>
+            <li><a href="about.html">Our story</a></li>
+            <li><a href="about.html#conservation">Impact</a></li>
+            <li><a href="about.html#team">Our guides</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="contact.html#faq">FAQ</a></li>
           </ul>
-        </div>
+        </nav>
+        <nav aria-label="Destinations">
+          <h6>Destinations</h6>
+          <ul>
+            <li><a href="destinations.html#kenya">Kenya safaris</a></li>
+            <li><a href="destinations.html#tanzania">Tanzania safaris</a></li>
+            <li><a href="destinations.html#botswana">Botswana safaris</a></li>
+            <li><a href="destinations.html#south-africa">South Africa safaris</a></li>
+            <li><a href="destinations.html#namibia">Namibia safaris</a></li>
+            <li><a href="destinations.html#zambia">Zambia safaris</a></li>
+            <li><a href="destinations.html#uganda-rwanda">Gorilla safaris</a></li>
+            <li><a href="destinations.html">See all destinations</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Journeys and experiences">
+          <h6>Journeys &amp; Experiences</h6>
+          <ul>
+            <li><a href="safaris.html?style=family">Family safaris</a></li>
+            <li><a href="safaris.html?style=honeymoon">Honeymoon safaris</a></li>
+            <li><a href="safaris.html?style=luxury">Luxury safaris</a></li>
+            <li><a href="safaris.html?style=adventure">Walking safaris</a></li>
+            <li><a href="safaris.html#gorillas-savanna">Gorilla trekking</a></li>
+            <li><a href="safaris.html#honeymoon-tanzania">Safari &amp; beach</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Planning">
+          <h6>Planning</h6>
+          <ul>
+            <li><a href="safaris.html">Our safaris</a></li>
+            <li><a href="destinations.html#when-to-go">When to go</a></li>
+            <li><a href="safaris.html#included">What's included</a></li>
+            <li><a href="contact.html">Plan your safari</a></li>
+          </ul>
+        </nav>
       </div>
-      <div class="footer-bottom">
+      <div class="footer-legal">
         <span>&copy; <span data-year>2026</span> Extrafari. All rights reserved.</span>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms &amp; conditions</a>
         <span>Nairobi &middot; Arusha &middot; Cape Town</span>
       </div>
     </div>
