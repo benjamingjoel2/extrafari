@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan your safari | Extrafari</title>
+  <meta name="description" content="Send Extrafari a safari enquiry and receive a tailored proposal within three working days.">
+  <meta property="og:title" content="Plan your safari | Extrafari">
+  <meta property="og:description" content="Send Extrafari a safari enquiry and receive a tailored proposal within three working days.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#26392a">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Extrafari home">
+        <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="20" fill="#c8862b"/>
+          <path d="M8 18c3-6 10-8 16-6 4 1 7 4 8 7-3 1-8 0-12 0s-9 1-12-1z" fill="#26392a"/>
+          <path d="M19 19l1 13M20 20l3-4" stroke="#26392a" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M6 33h28" stroke="#26392a" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Extrafari
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="safaris.html">Safaris</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a class="btn btn--primary btn--small" href="contact.html">Plan your safari</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="banner">
+      <div class="container">
+        <span class="eyebrow" style="color:#e6b45a">Plan your safari</span>
+        <h1>Tell us about your trip</h1>
+        <p class="lede">Share a few details and a planner will reply within one working day with ideas, or a full proposal within three.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split" style="align-items:flex-start">
+        <form class="form" id="enquiry-form" novalidate>
+          <h2 style="font-size:1.6rem">Safari enquiry</h2>
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+              <span class="error">Please enter your name.</span>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+              <span class="error">Please enter a valid email address.</span>
+            </div>
+            <div class="field">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+254 ...">
+            </div>
+            <div class="field">
+              <label for="country">Country of residence</label>
+              <input type="text" id="country" name="country" autocomplete="country-name">
+            </div>
+            <div class="field">
+              <label for="safari">Safari or destination</label>
+              <select id="safari" name="safari">
+                <option value="">Not sure yet</option>
+                <option>Great Migration Classic</option>
+                <option>Okavango &amp; Chobe Waterways</option>
+                <option>Big Five &amp; Cape Town</option>
+                <option>Gorillas &amp; Savanna</option>
+                <option>Namibia Desert &amp; Etosha</option>
+                <option>Zambia Walking Safari</option>
+                <option>Family Safari Kenya</option>
+                <option>Honeymoon Tanzania &amp; Zanzibar</option>
+                <option>Something custom</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="travellers">Number of travellers</label>
+              <input type="number" id="travellers" name="travellers" min="1" max="30" value="2" required>
+              <span class="error">Please enter how many people are travelling.</span>
+            </div>
+            <div class="field">
+              <label for="dates">Approximate dates</label>
+              <input type="text" id="dates" name="dates" placeholder="e.g. late August 2027, about 10 days">
+              <span class="hint">Flexible dates help us find the best availability.</span>
+            </div>
+            <div class="field">
+              <label for="budget">Budget per person (USD)</label>
+              <select id="budget" name="budget">
+                <option value="">Prefer not to say</option>
+                <option>Under $4,000</option>
+                <option>$4,000 to $7,000</option>
+                <option>$7,000 to $12,000</option>
+                <option>Over $12,000</option>
+              </select>
+            </div>
+            <div class="field field--full">
+              <label for="message">Tell us about your ideal safari</label>
+              <textarea id="message" name="message" placeholder="Wildlife you most want to see, travel style, special occasions, children's ages, anything else that helps."></textarea>
+            </div>
+            <div class="honeypot" aria-hidden="true">
+              <label for="website">Leave this field empty</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn--primary" type="submit">Send enquiry</button>
+            <span class="hint" style="font-size:0.85rem;color:var(--muted)">We never share your details. No obligation.</span>
+          </div>
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+        </form>
+
+        <aside class="contact-aside">
+          <div class="contact-card">
+            <h3>Talk to us</h3>
+            <p><a href="mailto:hello@extrafari.com">hello@extrafari.com</a></p>
+            <p><a href="tel:+254700000000">+254 700 000 000</a> (Nairobi, WhatsApp available)</p>
+            <p>Monday to Saturday, 08:00 to 18:00 East Africa Time</p>
+          </div>
+          <div class="contact-card">
+            <h3>Offices</h3>
+            <p><strong>Nairobi, Kenya</strong><br>Head office and East Africa operations</p>
+            <p><strong>Arusha, Tanzania</strong><br>Northern circuit guiding base</p>
+            <p><strong>Cape Town, South Africa</strong><br>Southern Africa planning</p>
+          </div>
+          <div class="contact-card">
+            <h3>Already travelling with us?</h3>
+            <p>Guests on safari can reach the 24-hour support line printed in their travel documents.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Good to know</span>
+          <h2>Frequently asked questions</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>How far in advance should I book?</summary>
+            <p>Nine to twelve months ahead for peak season (July to October) and for gorilla permits. Shoulder and green seasons can often be arranged with three to four months' notice.</p>
+          </details>
+          <details>
+            <summary>Is a safari safe for children?</summary>
+            <p>Yes, with the right camps. Many properties welcome children from six and some have no minimum age. We recommend malaria-free reserves in South Africa for younger families, and our Family Safari Kenya is designed around shorter drives and hands-on activities.</p>
+          </details>
+          <details>
+            <summary>What is the deposit and cancellation policy?</summary>
+            <p>A 30% deposit secures your booking with the balance due 60 days before travel. Cancellation terms depend on the camps involved and are set out clearly in your proposal before you commit.</p>
+          </details>
+          <details>
+            <summary>Do I need vaccinations or malaria tablets?</summary>
+            <p>Yellow fever certificates are required for entry to some countries and malaria precautions are advised for most safari areas. We provide a health checklist with every proposal, and you should confirm with a travel clinic before departure.</p>
+          </details>
+          <details>
+            <summary>Can you arrange international flights?</summary>
+            <p>We quote and book all internal flights. For international flights we can recommend routings and connect you with a partner agent, or you are welcome to book your own.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">Extrafari</a>
+          <p>Tailor-made African safaris, guided by people who know these landscapes as home.</p>
+        </div>
+        <div>
+          <h4>Safaris</h4>
+          <ul>
+            <li><a href="safaris.html?style=classic">Classic safaris</a></li>
+            <li><a href="safaris.html?style=luxury">Luxury lodges</a></li>
+            <li><a href="safaris.html?style=adventure">Walking &amp; adventure</a></li>
+            <li><a href="safaris.html?style=family">Family safaris</a></li>
+            <li><a href="safaris.html?style=honeymoon">Honeymoons</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Destinations</h4>
+          <ul>
+            <li><a href="destinations.html#kenya">Kenya</a></li>
+            <li><a href="destinations.html#tanzania">Tanzania</a></li>
+            <li><a href="destinations.html#botswana">Botswana</a></li>
+            <li><a href="destinations.html#south-africa">South Africa</a></li>
+            <li><a href="destinations.html#namibia">Namibia</a></li>
+            <li><a href="destinations.html#uganda-rwanda">Uganda &amp; Rwanda</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="about.html#conservation">Conservation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Extrafari. All rights reserved.</span>
+        <span>Nairobi &middot; Arusha &middot; Cape Town</span>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>

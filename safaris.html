@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Safaris | Extrafari</title>
+  <meta name="description" content="Browse Extrafari's signature safaris across Kenya, Tanzania, Botswana, South Africa, Namibia, Zambia, Uganda and Rwanda.">
+  <meta property="og:title" content="Safaris | Extrafari">
+  <meta property="og:description" content="Browse Extrafari's signature safaris across Kenya, Tanzania, Botswana, South Africa, Namibia, Zambia, Uganda and Rwanda.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#26392a">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Extrafari home">
+        <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="20" fill="#c8862b"/>
+          <path d="M8 18c3-6 10-8 16-6 4 1 7 4 8 7-3 1-8 0-12 0s-9 1-12-1z" fill="#26392a"/>
+          <path d="M19 19l1 13M20 20l3-4" stroke="#26392a" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M6 33h28" stroke="#26392a" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Extrafari
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="safaris.html" aria-current="page">Safaris</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a class="btn btn--primary btn--small" href="contact.html">Plan your safari</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="banner">
+      <div class="container">
+        <span class="eyebrow" style="color:#e6b45a">Safaris</span>
+        <h1>Find your safari</h1>
+        <p class="lede">Eight signature itineraries across East and Southern Africa. Each one is a starting point that we tailor to your dates, budget and pace.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <form class="filters" id="safari-filters" aria-label="Filter safaris">
+          <label>Region
+            <select name="region" id="filter-region">
+              <option value="">All regions</option>
+              <option value="east">East Africa</option>
+              <option value="southern">Southern Africa</option>
+            </select>
+          </label>
+          <label>Style
+            <select name="style" id="filter-style">
+              <option value="">All styles</option>
+              <option value="classic">Classic</option>
+              <option value="luxury">Luxury</option>
+              <option value="adventure">Adventure</option>
+              <option value="family">Family</option>
+              <option value="honeymoon">Honeymoon</option>
+            </select>
+          </label>
+          <label>Duration
+            <select name="duration" id="filter-duration">
+              <option value="">Any length</option>
+              <option value="short">Up to 8 days</option>
+              <option value="long">9 days or more</option>
+            </select>
+          </label>
+          <span class="count" id="safari-count" aria-live="polite"></span>
+        </form>
+
+        <div class="grid grid--2" id="safari-list">
+
+          <article class="card" id="great-migration" data-region="east" data-style="classic" data-days="10">
+            <div class="card__media scene scene--mara"><span class="tag">Kenya &amp; Tanzania</span></div>
+            <div class="card__body">
+              <h3>Great Migration Classic</h3>
+              <p class="card__meta">10 days &middot; Masai Mara &middot; Serengeti &middot; Ngorongoro Crater</p>
+              <p>The safari that started it all. Three nights on the Mara for river crossings (July to October), four in the central Serengeti and two on the crater rim. Light aircraft transfers keep road time short.</p>
+              <ul class="check-list">
+                <li>Private 4x4 with a Silver-level KPSGA guide</li>
+                <li>Balloon flight over the Mara at dawn</li>
+                <li>Maasai village visit hosted by community partners</li>
+              </ul>
+              <div class="card__foot">
+                <span class="price">From $6,950<small>per person sharing</small></span>
+                <a class="btn btn--primary btn--small" href="contact.html?safari=Great%20Migration%20Classic">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" id="okavango-chobe" data-region="southern" data-style="luxury" data-days="8">
+            <div class="card__media scene scene--okavango"><span class="tag">Botswana</span></div>
+            <div class="card__body">
+              <h3>Okavango &amp; Chobe Waterways</h3>
+              <p class="card__meta">8 days &middot; Okavango Delta &middot; Moremi &middot; Chobe River</p>
+              <p>A water-and-land safari in one of Africa's last great wildernesses. Fly between intimate camps, explore by mokoro and boat, and finish with the elephant herds of the Chobe riverfront.</p>
+              <ul class="check-list">
+                <li>Three exclusive-use camps, six guests maximum</li>
+                <li>Mokoro, boat and walking safaris included</li>
+                <li>Optional Victoria Falls extension</li>
+              </ul>
+              <div class="card__foot">
+                <span class="price">From $8,400<small>per person sharing</small></span>
+                <a class="btn btn--primary btn--small" href="contact.html?safari=Okavango%20%26%20Chobe%20Waterways">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" id="big-five-luxury" data-region="southern" data-style="luxury" data-days="7">
+            <div class="card__media scene scene--kruger"><span class="tag">South Africa</span></div>
+            <div class="card__body">
+              <h3>Big Five &amp; Cape Town</h3>
+              <p class="card__meta">7 days &middot; Sabi Sand &middot; Kruger &middot; Cape Town</p>
+              <p>Four nights in a private Sabi Sand reserve famous for leopard sightings, then three nights in Cape Town with the winelands and the Cape of Good Hope. Malaria-light options available.</p>
+              <ul class="check-list">
+                <li>Open-vehicle night drives and off-road tracking</li>
+                <li>Five-star lodge with private plunge pools</li>
+                <li>Private guided day in the Cape winelands</li>
+              </ul>
+              <div class="card__foot">
+                <span class="price">From $5,200<small>per person sharing</small></span>
+                <a class="btn btn--primary btn--small" href="contact.html?safari=Big%20Five%20%26%20Cape%20Town">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" id="gorillas-savanna" data-region="east" data-style="adventure" data-days="9">
+            <div class="card__media scene scene--gorilla"><span class="tag">Uganda &amp; Rwanda</span></div>
+            <div class="card__body">
+              <h3>Gorillas &amp; Savanna</h3>
+              <p class="card__meta">9 days &middot; Bwindi &middot; Queen Elizabeth NP &middot; Volcanoes NP</p>
+              <p>Two gorilla treks, one in Uganda's Bwindi Impenetrable Forest and one in Rwanda's Volcanoes National Park, linked by savanna game drives and a boat safari on the Kazinga Channel.</p>
+              <ul class="check-list">
+                <li>Gorilla permits secured up to a year ahead</li>
+                <li>Chimpanzee tracking in Kyambura Gorge</li>
+                <li>Moderate fitness required for forest treks</li>
+              </ul>
+              <div class="card__foot">
+                <span class="price">From $7,800<small>per person sharing</small></span>
+                <a class="btn btn--primary btn--small" href="contact.html?safari=Gorillas%20%26%20Savanna">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" id="namibia-desert" data-region="southern" data-style="adventure" data-days="11">
+            <div class="card__media scene scene--namib"><span class="tag">Namibia</span></div>
+            <div class="card__body">
+              <h3>Namibia Desert &amp; Etosha</h3>
+              <p class="card__meta">11 days &middot; Sossusvlei &middot; Swakopmund &middot; Damaraland &middot; Etosha</p>
+              <p>A self-drive or guided road journey through the world's oldest desert: red dunes at sunrise, desert-adapted elephants in Damaraland and floodlit waterholes in Etosha.</p>
+              <ul class="check-list">
+                <li>Guided or fully supported self-drive versions</li>
+                <li>Dark-sky stargazing in the NamibRand reserve</li>
+                <li>Rhino tracking on foot with local conservancy rangers</li>
+              </ul>
+              <div class="card__foot">
+                <span class="price">From $6,100<small>per person sharing</small></span>
+                <a class="btn btn--primary btn--small" href="contact.html?safari=Namibia%20Desert%20%26%20Etosha">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" id="zambia-walking" data-region="southern" data-style="adventure" data-days="9">
+            <div class="card__media scene scene--luangwa"><span class="tag">Zambia</span></div>
+            <div class="card__body">
+              <h3>Zambia Walking Safari</h3>
+              <p class="card__meta">9 days &middot; South Luangwa &middot; Lower Zambezi &middot; Victoria Falls</p>
+              <p>The home of the walking safari. Follow armed scouts and expert guides on foot through South Luangwa, canoe the Lower Zambezi past hippo pods, and end at the thundering Victoria Falls.</p>
+              <ul class="check-list">
+                <li>Bush camps with a maximum of eight guests</li>
+                <li>Canoeing and tiger fishing on the Zambezi</li>
+                <li>Best from June to October in the dry season</li>
+              </ul>
+              <div class="card__foot">
+                <span class="price">From $5,900<small>per person sharing</small></span>
+                <a class="btn btn--primary btn--small" href="contact.html?safari=Zambia%20Walking%20Safari">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" id="family-kenya" data-region="east" data-style="family" data-days="8">
+            <div class="card__media scene scene--laikipia"><span class="tag">Kenya</span></div>
+            <div class="card__body">
+              <h3>Family Safari Kenya</h3>
+              <p class="card__meta">8 days &middot; Laikipia &middot; Masai Mara &middot; Nairobi</p>
+              <p>Built for families with children from six upwards. Family suites, junior ranger programmes, camel rides and horseback safaris in Laikipia, then a classic Mara finale with shorter drives.</p>
+              <ul class="check-list">
+                <li>Child-friendly lodges with pools and family tents</li>
+                <li>Junior ranger tracking and bush skills courses</li>
+                <li>Giraffe Centre and elephant orphanage in Nairobi</li>
+              </ul>
+              <div class="card__foot">
+                <span class="price">From $4,600<small>per person sharing</small></span>
+                <a class="btn btn--primary btn--small" href="contact.html?safari=Family%20Safari%20Kenya">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" id="honeymoon-tanzania" data-region="east" data-style="honeymoon" data-days="12">
+            <div class="card__media scene scene--zanzibar"><span class="tag">Tanzania &amp; Zanzibar</span></div>
+            <div class="card__body">
+              <h3>Honeymoon Tanzania &amp; Zanzibar</h3>
+              <p class="card__meta">12 days &middot; Tarangire &middot; Serengeti &middot; Zanzibar</p>
+              <p>Seven nights of safari in intimate tented camps, then five nights on Zanzibar's white-sand east coast. Private dinners under the stars, a dhow sunset cruise and a spice-farm tour included.</p>
+              <ul class="check-list">
+                <li>Romantic camps with private decks and bush baths</li>
+                <li>Beachfront villa on Zanzibar with private butler</li>
+                <li>Honeymoon touches included at every property</li>
+              </ul>
+              <div class="card__foot">
+                <span class="price">From $9,200<small>per person sharing</small></span>
+                <a class="btn btn--primary btn--small" href="contact.html?safari=Honeymoon%20Tanzania%20%26%20Zanzibar">Enquire</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+        <div class="empty" id="safari-empty">No safaris match those filters. Try widening your search, or <a href="contact.html">tell us what you are looking for</a>.</div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">What is included</span>
+          <h2>Clear pricing, no surprises</h2>
+        </div>
+        <div class="grid grid--2">
+          <div>
+            <h3>Included in every safari</h3>
+            <ul class="check-list">
+              <li>All accommodation, park and conservancy fees</li>
+              <li>Private guide and 4x4 vehicle throughout</li>
+              <li>Internal flights and transfers as itinerary</li>
+              <li>Meals and most drinks at camps and lodges</li>
+              <li>Flying doctor emergency evacuation cover</li>
+              <li>24/7 in-country support</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Not included</h3>
+            <ul class="check-list">
+              <li>International flights and visas</li>
+              <li>Travel insurance (required for all guests)</li>
+              <li>Gorilla and chimpanzee permits (quoted separately)</li>
+              <li>Premium drinks, spa treatments and gratuities</li>
+              <li>Optional activities such as balloon flights unless stated</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>Cannot see the right trip?</h2>
+            <p>Most of our guests travel on an itinerary we built from scratch. Tell us what you have in mind.</p>
+          </div>
+          <a class="btn btn--light" href="contact.html">Design my own safari</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">Extrafari</a>
+          <p>Tailor-made African safaris, guided by people who know these landscapes as home.</p>
+        </div>
+        <div>
+          <h4>Safaris</h4>
+          <ul>
+            <li><a href="safaris.html?style=classic">Classic safaris</a></li>
+            <li><a href="safaris.html?style=luxury">Luxury lodges</a></li>
+            <li><a href="safaris.html?style=adventure">Walking &amp; adventure</a></li>
+            <li><a href="safaris.html?style=family">Family safaris</a></li>
+            <li><a href="safaris.html?style=honeymoon">Honeymoons</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Destinations</h4>
+          <ul>
+            <li><a href="destinations.html#kenya">Kenya</a></li>
+            <li><a href="destinations.html#tanzania">Tanzania</a></li>
+            <li><a href="destinations.html#botswana">Botswana</a></li>
+            <li><a href="destinations.html#south-africa">South Africa</a></li>
+            <li><a href="destinations.html#namibia">Namibia</a></li>
+            <li><a href="destinations.html#uganda-rwanda">Uganda &amp; Rwanda</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="about.html#conservation">Conservation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> Extrafari. All rights reserved.</span>
+        <span>Nairobi &middot; Arusha &middot; Cape Town</span>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>
