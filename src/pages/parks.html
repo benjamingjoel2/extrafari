@@ -1,0 +1,84 @@
+  <main id="main" class="interior">
+    <section class="banner">
+      <div class="container">
+        <p class="subtitle subtitle--sand">National parks</p>
+        <h1>Every national park in Africa</h1>
+        <p class="lede">Search all of Africa's national parks by name, country or region, read our picks of the very best, and add the ones that catch your eye to a safari enquiry.</p>
+      </div>
+    </section>
+
+    <section class="parks-tools">
+      <div class="container">
+        <form class="parks-search" id="parks-search" role="search" aria-label="Search national parks">
+          <div class="parks-search__box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <input type="search" id="parks-q" placeholder="Search a park, country or region, e.g. Mozambique" autocomplete="off" aria-label="Search parks">
+            <button type="button" class="parks-search__clear" id="parks-clear" aria-label="Clear search">&times;</button>
+          </div>
+          <div class="parks-filters">
+            <label>Region
+              <select id="parks-region">
+                <option value="">All regions</option>
+                <option>East Africa</option>
+                <option>Southern Africa</option>
+                <option>Central Africa</option>
+                <option>West Africa</option>
+                <option>North Africa</option>
+                <option>Indian Ocean islands</option>
+              </select>
+            </label>
+            <label>Country
+              <select id="parks-country"><option value="">All countries</option></select>
+            </label>
+            <label class="parks-toggle"><input type="checkbox" id="parks-operates"> Where Extrafari operates</label>
+            <span class="parks-count" id="parks-count" aria-live="polite"></span>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="top-parks">
+      <div class="container">
+        <div class="two-col" style="margin-bottom:48px">
+          <div>
+            <p class="subtitle subtitle--sand">Our picks</p>
+            <h2 class="t-h3">The top national parks in Africa</h2>
+          </div>
+          <div>
+            <p class="muted">Thirty-three parks our planners and guides rate above all others, for wildlife, landscape and the quality of the experience. Click a card to add it to your enquiry.</p>
+          </div>
+        </div>
+        <div class="grid grid--3" id="top-grid"></div>
+        <p class="empty" id="top-empty">None of our featured parks match that search. Scroll down for the full directory.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="all-parks">
+      <div class="container">
+        <div class="two-col" style="margin-bottom:40px">
+          <div>
+            <p class="subtitle" style="color:var(--orange)">The full directory</p>
+            <h2 class="t-h3">All national parks, country by country</h2>
+          </div>
+          <div>
+            <p class="muted">Every national park on the continent, grouped by country. Extrafari runs its own safaris in eight countries and arranges the rest on request through trusted partners. Area is in square kilometres.</p>
+          </div>
+        </div>
+        <div id="parks-directory"></div>
+        <p class="empty" id="parks-empty">No parks match that search. Try a country name, a region or part of a park name.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="selection-bar" id="selection-bar" aria-live="polite">
+    <div class="container selection-bar__inner">
+      <div class="selection-bar__list">
+        <strong><span id="selection-count">0</span> parks selected</strong>
+        <span id="selection-names" class="selection-bar__names"></span>
+      </div>
+      <div class="selection-bar__actions">
+        <button type="button" class="btn btn--outline btn--small" id="selection-clear">Clear</button>
+        <a class="btn btn--primary btn--small" id="selection-enquire" href="contact.html">Enquire about these parks</a>
+      </div>
+    </div>
+  </div>

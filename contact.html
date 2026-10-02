@@ -54,6 +54,8 @@
               <a href="destinations.html#zambia">Zambia</a>
               <a href="destinations.html#uganda-rwanda">Uganda &amp; Rwanda</a>
               <a href="destinations.html#when-to-go">When to go</a>
+              <a href="parks.html">All national parks in Africa</a>
+              <a href="parks.html#top-parks">Top national parks</a>
             </div>
             <div class="mega__col">
               <h4>Safaris</h4>
@@ -95,10 +97,10 @@
     </div>
   </header>
 
-  <main id="main" class="interior">
+  <main id="main">
     <section class="banner">
       <div class="container">
-        <p class="subtitle subtitle--sand">Plan your safari</p>
+        <span class="eyebrow" style="color:#e6b45a">Plan your safari</span>
         <h1>Tell us about your trip</h1>
         <p class="lede">Share a few details and a planner will reply within one working day with ideas, or a full proposal within three.</p>
       </div>
@@ -161,6 +163,12 @@
                 <option>$7,000 to $12,000</option>
                 <option>Over $12,000</option>
               </select>
+            </div>
+            <div class="field field--full" id="parks-field" hidden>
+              <label>National parks you selected</label>
+              <div class="chips" id="parks-chips"></div>
+              <input type="hidden" id="parks" name="parks">
+              <span class="hint">Picked from our <a href="parks.html">national parks directory</a>. You can change them there.</span>
             </div>
             <div class="field field--full">
               <label for="message">Tell us about your ideal safari</label>
@@ -261,6 +269,7 @@
             <li><a href="destinations.html#zambia">Zambia safaris</a></li>
             <li><a href="destinations.html#uganda-rwanda">Gorilla safaris</a></li>
             <li><a href="destinations.html">See all destinations</a></li>
+            <li><a href="parks.html">All national parks</a></li>
           </ul>
         </nav>
         <nav aria-label="Journeys and experiences">
@@ -293,6 +302,5 @@
     </div>
   </footer>
   <script src="js/main.js" defer></script>
-
 </body>
 </html>

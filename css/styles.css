@@ -571,3 +571,74 @@ th:first-child { background: var(--stone); }
   html { scroll-behavior: auto; }
   .slider__track, .exp__track, .cards__track, .mega { transition: none; }
 }
+
+/* ---------- National parks directory ---------- */
+.parks-tools { background: var(--brown); color: var(--white); padding: 32px 0; position: sticky; top: var(--header-h); z-index: 40; border-bottom: 1px solid rgba(255,255,255,.1); }
+.parks-search__box { position: relative; display: flex; align-items: center; background: var(--white); color: var(--black); }
+.parks-search__box svg { width: 22px; height: 22px; margin-left: 16px; opacity: .6; flex: none; }
+.parks-search__box input { flex: 1; border: 0; background: none; font: inherit; font-size: 18px; padding: 18px 16px; color: var(--black); min-width: 0; }
+.parks-search__box input:focus { outline: none; }
+.parks-search__box:focus-within { outline: 2px solid var(--orange); }
+.parks-search__clear { font-size: 28px; line-height: 1; padding: 0 18px; opacity: .5; }
+.parks-search__clear:hover { opacity: 1; }
+.parks-filters { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; margin-top: 16px; }
+.parks-filters label { display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: .15em; text-transform: uppercase; opacity: .9; }
+.parks-filters select { font: inherit; font-size: 14px; padding: 10px 36px 10px 12px; border: 1px solid rgba(255,255,255,.3); background: var(--black); color: var(--white); appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5' fill='none' stroke='%23fff' stroke-width='2'/></svg>"); background-repeat: no-repeat; background-position: right 10px center; background-size: 16px; max-width: 260px; }
+.parks-toggle input { width: 16px; height: 16px; accent-color: var(--orange); }
+.parks-count { margin-left: auto; font-size: 14px; opacity: .75; }
+@media (max-width: 767px) { .parks-tools { position: static; } .parks-count { margin-left: 0; width: 100%; } }
+
+.park-card { background: var(--white); color: var(--black); display: flex; flex-direction: column; cursor: pointer; position: relative; border: 2px solid transparent; transition: border-color .15s ease, transform .15s ease; }
+.park-card:hover { transform: translateY(-2px); }
+.park-card.is-selected { border-color: var(--orange); }
+.park-card.is-hidden { display: none; }
+.park-card__media { height: 180px; position: relative; display: flex; align-items: flex-start; justify-content: space-between; padding: 14px; }
+.park-card__media .rank { position: relative; z-index: 3; font-family: var(--font-serif); font-size: 28px; color: var(--white); line-height: 1; }
+.park-card__media .tag { position: relative; z-index: 3; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--white); background: rgba(0,0,0,.55); padding: 6px 10px; align-self: flex-start; }
+.park-card__body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.park-card__body h3 { font-size: 26px; line-height: 32px; }
+.park-card__body .country { font-size: 12px; letter-spacing: .15em; text-transform: uppercase; opacity: .6; }
+.park-card__body p { font-size: 14px; opacity: .85; }
+.park-card__facts { font-size: 13px; display: grid; gap: 6px; margin-top: 4px; }
+.park-card__facts strong { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--orange); display: block; }
+.park-card__select { margin-top: auto; padding-top: 14px; border-top: 1px solid #e3ddd3; display: flex; justify-content: space-between; align-items: center; font-size: 12px; letter-spacing: .15em; text-transform: uppercase; font-weight: 600; }
+.park-card__select .check { width: 22px; height: 22px; border: 1px solid #999; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; }
+.park-card.is-selected .park-card__select .check { background: var(--orange); border-color: var(--orange); color: #fff; }
+.park-card.is-selected .park-card__select .check::after { content: "\2713"; font-size: 13px; }
+.park-card.is-selected .park-card__select .label-add { display: none; }
+.park-card:not(.is-selected) .park-card__select .label-added { display: none; }
+
+.country-group { background: var(--white); color: var(--black); margin-bottom: 12px; }
+.country-group.is-hidden { display: none; }
+.country-group__head { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 24px; text-align: left; border-bottom: 1px solid transparent; }
+.country-group__head h3 { font-size: 24px; line-height: 30px; }
+.country-group__head .meta { display: flex; align-items: center; gap: 14px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; opacity: .7; white-space: nowrap; }
+.country-group__head .meta .op { color: var(--orange); opacity: 1; }
+.country-group__head .chev { width: 18px; height: 18px; transition: transform .2s; }
+.country-group.is-open .country-group__head .chev { transform: rotate(180deg); }
+.country-group.is-open .country-group__head { border-bottom-color: #e3ddd3; }
+.country-group__body { display: none; }
+.country-group.is-open .country-group__body { display: block; }
+.park-row { display: grid; grid-template-columns: 1fr auto auto auto; gap: 8px 20px; align-items: center; padding: 14px 24px; border-bottom: 1px solid #efebe4; font-size: 14px; }
+.park-row:last-child { border-bottom: 0; }
+.park-row.is-hidden { display: none; }
+.park-row .name { font-family: var(--font-serif); font-size: 19px; }
+.park-row .name .star { color: var(--orange); font-size: 14px; margin-left: 6px; vertical-align: 2px; }
+.park-row .fact { opacity: .65; white-space: nowrap; font-size: 13px; }
+.park-row button { font-size: 11px; letter-spacing: .15em; text-transform: uppercase; font-weight: 600; padding: 8px 12px; border: 1px solid #bbb; white-space: nowrap; }
+.park-row button:hover { border-color: var(--orange); color: var(--orange); }
+.park-row.is-selected button { background: var(--orange); border-color: var(--orange); color: #fff; }
+.park-row mark, .park-card mark, .country-group__head mark { background: #ffe2c2; color: inherit; padding: 0 2px; }
+@media (max-width: 639px) { .park-row { grid-template-columns: 1fr auto; } .park-row .fact { display: none; } .country-group__head .meta span:not(.op) { display: none; } }
+
+.selection-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: var(--black); color: var(--white); border-top: 1px solid rgba(255,255,255,.15); transform: translateY(100%); transition: transform .25s ease; }
+.selection-bar.is-visible { transform: none; }
+.selection-bar__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; }
+.selection-bar__list { min-width: 0; font-size: 14px; }
+.selection-bar__names { display: block; opacity: .7; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.selection-bar__actions { display: flex; gap: 10px; flex: none; }
+body.has-selection { padding-bottom: 80px; }
+.field .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.field .chips span { background: var(--stone); padding: 6px 12px; font-size: 13px; }
+.park-row.is-selected .label-add, .park-row:not(.is-selected) .label-added { display: none; }
+.parks-search__box input::-webkit-search-cancel-button, .parks-search__box input::-webkit-search-decoration { -webkit-appearance: none; appearance: none; }

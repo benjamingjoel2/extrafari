@@ -219,6 +219,18 @@
     if (preset && safariSelect) {
       Array.prototype.forEach.call(safariSelect.options, function (opt) { if (opt.text === preset) safariSelect.value = opt.value; });
     }
+    var parksParam = new URLSearchParams(window.location.search).get("parks");
+    var parksField = document.getElementById("parks-field");
+    if (parksParam && parksField) {
+      var names = parksParam.split("|").filter(Boolean);
+      var chips = document.getElementById("parks-chips");
+      names.forEach(function (n) { var s = document.createElement("span"); s.textContent = n; chips.appendChild(s); });
+      document.getElementById("parks").value = names.join("; ");
+      parksField.hidden = false;
+      if (safariSelect && !preset) safariSelect.value = "Something custom";
+      var msg = document.getElementById("message");
+      if (msg && !msg.value) msg.value = "I would like to visit: " + names.join(", ") + ".\n\n";
+    }
     function setInvalid(input, invalid) {
       var field = input.closest(".field");
       if (field) field.classList.toggle("is-invalid", invalid);
