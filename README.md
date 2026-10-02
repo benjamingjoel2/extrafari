@@ -28,11 +28,40 @@ Interior pages share the same header, footer, typography and colour tokens.
 | `index.html` | Home, structured as described above |
 | `safaris.html` | Eight itineraries with region / style / duration filters (state is kept in the URL) |
 | `destinations.html` | Country guides plus a month-by-month season table |
+| `parks.html` | Searchable directory of every national park in Africa, with featured top picks and park selection for enquiries |
 | `about.html` | Company story, values, conservation, team |
 | `contact.html` | Enquiry form, contact details, FAQ |
 | `404.html` | Not-found page (GitHub Pages serves it automatically) |
 
-Shared styles live in `css/styles.css` and behaviour in `js/main.js`.
+Shared styles live in `css/styles.css` and behaviour in `js/main.js`. The parks
+directory uses `js/parks-data.js` (the dataset) and `js/parks.js` (search,
+filters and selection).
+
+## Editing pages
+
+The root HTML files are generated. Edit the page bodies in `src/pages/` and the
+shared header and footer in `src/partials/`, then rebuild:
+
+```sh
+python3 build.py
+```
+
+Page titles, descriptions and per-page scripts are listed in `build.py`.
+
+## National parks directory
+
+`js/parks-data.js` holds 388 national parks across 54 countries. The base list
+comes from Wikipedia's list of national parks in Africa (CC BY-SA), with a few
+real parks added that the list omits, and Extrafari editorial notes on the 33
+featured parks (description, best time, wildlife). Each entry has `name`,
+`country`, `region`, `area` (km²), `est` (year), and `operates` (true for the
+eight countries where Extrafari runs its own safaris).
+
+On `parks.html` visitors can search by park, country, region or wildlife, filter
+by region, country or Extrafari-operated countries, and add parks to a
+selection. The selection is kept in `sessionStorage` and handed to
+`contact.html?parks=...`, where it appears as chips, a hidden `parks` field and
+a pre-filled message.
 
 ## Running locally
 
