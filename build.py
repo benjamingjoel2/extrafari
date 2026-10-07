@@ -18,6 +18,8 @@ PAGES = {
               "Search every national park in Africa by name, country or region, see Extrafari's top picks, and add parks to a safari enquiry.", ["js/parks-data.js", "js/parks.js"]),
     "about": ("About | Extrafari",
               "Extrafari is an owner-run African safari operator with teams in Nairobi, Arusha and Cape Town. Meet the planners and guides behind every trip.", []),
+    "credits": ("Photo credits | Extrafari",
+                "Photographers and licences for the imagery used on the Extrafari website.", ["js/credits.js"]),
     "contact": ("Plan your safari | Extrafari",
                 "Send Extrafari a safari enquiry and receive a tailored proposal within three working days.", []),
 }

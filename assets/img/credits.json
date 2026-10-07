@@ -1,0 +1,242 @@
+{
+ "hero": {
+  "file": "hero.jpg",
+  "title": "Sunset, Turmi Rd, Omo Valley, Ethiopia",
+  "creator": "Rod Waddington",
+  "license": "CC BY-SA 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/64607715@N05/21218273716",
+  "w": 1024,
+  "h": 683
+ },
+ "mara": {
+  "file": "mara.jpg",
+  "title": "Maasai Mara",
+  "creator": "joxeankoret",
+  "license": "CC BY-SA 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/7752891@N06/6086234020",
+  "w": 1024,
+  "h": 768
+ },
+ "serengeti": {
+  "file": "serengeti.jpg",
+  "title": "Tanzania-Serengeti-38",
+  "creator": "QuakeUp!",
+  "license": "CC BY-SA 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/96531743@N06/8872860891",
+  "w": 1024,
+  "h": 678
+ },
+ "okavango": {
+  "file": "okavango.jpg",
+  "title": "Sunset on the hippo pool",
+  "creator": "indii.org / Lawrence Murray",
+  "license": "CC BY 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/22699083@N04/3047590417",
+  "w": 1024,
+  "h": 683
+ },
+ "kruger": {
+  "file": "kruger.jpg",
+  "title": "Kruger Park",
+  "creator": "André-Pierre",
+  "license": "CC BY 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/87358092@N00/51341229013",
+  "w": 1024,
+  "h": 683
+ },
+ "gorilla": {
+  "file": "gorilla.jpg",
+  "title": "Mountain Gorilla,Bwindi, Uganda",
+  "creator": "Rod Waddington",
+  "license": "CC BY-SA 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/64607715@N05/15135296098",
+  "w": 1024,
+  "h": 779
+ },
+ "namib": {
+  "file": "namib.jpg",
+  "title": "Sossusvlei Dunes, Namibia - Deadvlei",
+  "creator": "Rick McCharles",
+  "license": "CC BY 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/71035721@N00/13421168493",
+  "w": 1024,
+  "h": 768
+ },
+ "luangwa": {
+  "file": "luangwa.jpg",
+  "title": "finally a leopard",
+  "creator": "Shaun D Metcalfe",
+  "license": "CC BY 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/40987041@N07/4973021587",
+  "w": 1024,
+  "h": 768
+ },
+ "zanzibar": {
+  "file": "zanzibar.jpg",
+  "title": "Setting the sail, Zanzibar",
+  "creator": "Rod Waddington",
+  "license": "CC BY-SA 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/64607715@N05/51669172889",
+  "w": 1024,
+  "h": 680
+ },
+ "laikipia": {
+  "file": "laikipia.jpg",
+  "title": "DSCN0602",
+  "creator": "kimvanderwaal",
+  "license": "CC BY 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/68505590@N05/6285095358",
+  "w": 1024,
+  "h": 768
+ },
+ "cape": {
+  "file": "cape.jpg",
+  "title": "Table Mountain, Cape Town",
+  "creator": "Gurney5",
+  "license": "CC BY 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/15404046@N02/5083860426",
+  "w": 1024,
+  "h": 685
+ },
+ "rwanda": {
+  "file": "rwanda.jpg",
+  "title": "People on the road outside Volcanoes National Park, Rwanda",
+  "creator": "Derek Keats",
+  "license": "CC BY 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/93242958@N00/290786146",
+  "w": 1024,
+  "h": 680
+ },
+ "zambezi": {
+  "file": "zambezi.jpg",
+  "title": "Victoria Falls, Zimbabwe side",
+  "creator": "Obliot",
+  "license": "CC BY 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/38238828@N00/4858224254",
+  "w": 1024,
+  "h": 559
+ },
+ "night": {
+  "file": "night.jpg",
+  "title": "220804-F-LN908-0032",
+  "creator": "CNE CNA C6F",
+  "license": "Public Domain Mark 1.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/94966166@N02/52264584306",
+  "w": 1024,
+  "h": 731
+ },
+ "dusk": {
+  "file": "dusk.jpg",
+  "title": "Turmi Sunset",
+  "creator": "Rod Waddington",
+  "license": "CC BY-SA 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/64607715@N05/40330926415",
+  "w": 1024,
+  "h": 683
+ },
+ "forest": {
+  "file": "forest.jpg",
+  "title": "Uganda - Congo",
+  "creator": "hjallig",
+  "license": "CC BY 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/27072169@N00/2339365274",
+  "w": 1024,
+  "h": 683
+ },
+ "gamedrive": {
+  "file": "gamedrive.jpg",
+  "title": "Safari in The Maasai Mara",
+  "creator": "Ray in Manila",
+  "license": "CC BY 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/21186555@N07/43837384641",
+  "w": 1024,
+  "h": 761
+ },
+ "balloon": {
+  "file": "balloon.jpg",
+  "title": "Ballooning away!",
+  "creator": "Wajahat Mahmood",
+  "license": "CC BY-SA 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/26116471@N03/6417186763",
+  "w": 1024,
+  "h": 680
+ },
+ "chimp": {
+  "file": "chimp.jpg",
+  "title": "Chimpanzee, Kibale, Uganda",
+  "creator": "Rod Waddington",
+  "license": "CC BY-SA 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/64607715@N05/15059241309",
+  "w": 1024,
+  "h": 684
+ },
+ "cheetah": {
+  "file": "cheetah.jpg",
+  "title": "Cheetah in the Grass",
+  "creator": "wwarby",
+  "license": "CC BY 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/26782864@N00/2405272046",
+  "w": 1024,
+  "h": 768
+ },
+ "camp": {
+  "file": "camp.jpg",
+  "title": "dsc_0078081412Serial Letter (B)e",
+  "creator": "LGO'Brien",
+  "license": "CC BY 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/48900606@N06/7882345492",
+  "w": 1024,
+  "h": 685
+ },
+ "village": {
+  "file": "village.jpg",
+  "title": "Maasai houses, Kenya",
+  "creator": "gbaku",
+  "license": "CC BY-SA 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/72105154@N00/549127756",
+  "w": 1024,
+  "h": 695
+ },
+ "rhino": {
+  "file": "rhino.jpg",
+  "title": "Black Rhino - Masai Mara National Reserve, Kenya. 04.08.2008",
+  "creator": "JULIAN MASON",
+  "license": "CC BY 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/30937273@N06/3520107213",
+  "w": 1024,
+  "h": 685
+ },
+ "lion": {
+  "file": "lion.jpg",
+  "title": "DSC02399",
+  "creator": "joshtabti",
+  "license": "CC BY 2.0",
+  "source": "flickr",
+  "url": "https://www.flickr.com/photos/71196600@N04/8086230532",
+  "w": 1024,
+  "h": 576
+ }
+}

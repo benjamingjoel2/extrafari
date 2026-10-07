@@ -60,7 +60,7 @@
     card.setAttribute("role", "button");
     card.setAttribute("aria-pressed", "false");
     card.innerHTML =
-      '<div class="park-card__media scene scene--' + esc(p.scene) + '"><span class="rank">' + (p.rank < 10 ? "0" : "") + p.rank + '</span><span class="tag">' + (p.operates ? "Extrafari operates here" : "On request") + '</span></div>' +
+      '<div class="park-card__media scene ' + (p.img ? 'has-photo' : 'scene--' + esc(p.scene)) + '"' + (p.img ? ' style="background-image:url(' + esc(p.img.replace('/500px-', '/960px-')) + ')"' : '') + '><span class="rank">' + (p.rank < 10 ? "0" : "") + p.rank + '</span><span class="tag">' + (p.operates ? "Extrafari operates here" : "On request") + '</span></div>' +
       '<div class="park-card__body"><span class="country" data-hl="country">' + esc(p.country) + '</span><h3 data-hl="name">' + esc(p.name) + '</h3><p>' + esc(p.desc) + '</p>' +
       '<div class="park-card__facts"><div><strong>Best time</strong>' + esc(p.best) + '</div><div><strong>Known for</strong>' + esc(p.wildlife) + '</div>' +
       '<div><strong>Size</strong>' + (p.area ? fmt(p.area) + " km²" : "n/a") + (p.est ? " &middot; established " + p.est : "") + '</div></div>' +
@@ -90,6 +90,7 @@
       row.className = "park-row";
       row.setAttribute("data-key", key(p));
       row.innerHTML =
+        (p.img ? '<img class="thumb" loading="lazy" src="' + esc(p.img.replace('/500px-', '/120px-')) + '" alt="">' : '<span class="thumb"></span>') +
         '<span class="name" data-hl="name">' + esc(p.name) + (p.top ? '<span class="star" title="One of our top picks">&#9733;</span>' : "") + '</span>' +
         '<span class="fact">' + (p.area ? fmt(p.area) + " km²" : "") + '</span>' +
         '<span class="fact">' + (p.est ? "est. " + p.est : "") + '</span>' +
@@ -187,6 +188,16 @@
     selEnquire.href = "contact.html?parks=" + encodeURIComponent(selected.join("|"));
   }
   selClear.addEventListener("click", function () { selected = []; try { sessionStorage.removeItem(STORE); } catch (e) {} renderSelection(); });
+
+  /* Photo credits */
+  var creditsEl = document.getElementById("parks-credits");
+  if (creditsEl) {
+    parks.filter(function (p) { return p.img; }).forEach(function (p) {
+      var li = document.createElement("li");
+      li.innerHTML = esc(p.name) + ": <a href=\"" + esc(p.imgPage) + "\" rel=\"noopener\" target=\"_blank\">photo</a>" + (p.imgBy ? " by " + esc(p.imgBy) : "") + (p.imgLicense ? ", " + esc(p.imgLicense) : "") + ", via Wikimedia Commons";
+      creditsEl.appendChild(li);
+    });
+  }
 
   apply();
   renderSelection();
