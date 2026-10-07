@@ -194,7 +194,7 @@
   if (creditsEl) {
     parks.filter(function (p) { return p.img; }).forEach(function (p) {
       var li = document.createElement("li");
-      li.innerHTML = esc(p.name) + ": <a href=\"" + esc(p.imgPage) + "\" rel=\"noopener\" target=\"_blank\">photo</a>" + (p.imgBy ? " by " + esc(p.imgBy) : "") + (p.imgLicense ? ", " + esc(p.imgLicense) : "") + ", via Wikimedia Commons";
+      li.innerHTML = esc(p.name) + ": <a href=\"" + esc(p.imgPage) + "\" rel=\"noopener\" target=\"_blank\">photo</a>" + (p.imgBy ? " by " + esc(p.imgBy) : "") + (p.imgLicense ? ", " + esc(p.imgLicense) : " (author and licence on the Commons file page)") + ", via Wikimedia Commons";
       creditsEl.appendChild(li);
     });
   }
