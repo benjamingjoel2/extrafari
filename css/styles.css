@@ -163,12 +163,8 @@ h4, h5, h6 { font-size: 24px; line-height: 32px; }
 /* ---------- Scenes (placeholder photography) ---------- */
 .scene { position: relative; overflow: hidden; background: var(--grey-blue); }
 .scene::before { content: ""; position: absolute; inset: 0; background-size: cover; background-position: center; }
-.scene::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background:
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 100'><path d='M10 44 C20 22 60 14 92 24 C108 30 114 42 110 50 C90 57 30 58 10 44 Z' fill='rgba(10,8,6,0.72)'/><path d='M58 50 L56 100' stroke='rgba(10,8,6,0.72)' stroke-width='5' stroke-linecap='round'/><path d='M57 62 L80 47 M57 68 L34 50' stroke='rgba(10,8,6,0.72)' stroke-width='4' stroke-linecap='round'/></svg>") right 14% bottom 10% / 18% auto no-repeat,
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 100' preserveAspectRatio='none'><path d='M0 100 L0 58 Q60 42 120 60 Q180 78 240 56 Q310 34 400 60 L400 100 Z' fill='rgba(10,8,6,0.55)'/></svg>") bottom / 100% 30% no-repeat;
-}
+.scene::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.45) 100%); }
+.scene.has-photo::before { background-size: cover; background-position: center; }
 .scene--mara::before { background-image: linear-gradient(180deg, #e9c98c 0%, #c9863a 55%, #5e3a1c 100%); }
 .scene--serengeti::before { background-image: linear-gradient(180deg, #f2d59a 0%, #b9742c 50%, #4a2e15 100%); }
 .scene--okavango::before { background-image: linear-gradient(180deg, #9cc4bb 0%, #3f7d64 55%, #163a2e 100%); }
@@ -642,3 +638,42 @@ body.has-selection { padding-bottom: 80px; }
 .field .chips span { background: var(--stone); padding: 6px 12px; font-size: 13px; }
 .park-row.is-selected .label-add, .park-row:not(.is-selected) .label-added { display: none; }
 .parks-search__box input::-webkit-search-cancel-button, .parks-search__box input::-webkit-search-decoration { -webkit-appearance: none; appearance: none; }
+
+/* Real photography (Wikimedia Commons, see credits.html). Each rule layers the photo over the gradient fallback. */
+.scene--mara::before { background-image: url(../assets/img/mara.jpg); background-size: cover; background-position: center; }
+.scene--serengeti::before { background-image: url(../assets/img/serengeti.jpg); background-size: cover; background-position: center; }
+.scene--okavango::before { background-image: url(../assets/img/okavango.jpg); background-size: cover; background-position: center; }
+.scene--kruger::before { background-image: url(../assets/img/kruger.jpg); background-size: cover; background-position: center; }
+.scene--gorilla::before { background-image: url(../assets/img/gorilla.jpg); background-size: cover; background-position: center; }
+.scene--namib::before { background-image: url(../assets/img/namib.jpg); background-size: cover; background-position: center; }
+.scene--luangwa::before { background-image: url(../assets/img/luangwa.jpg); background-size: cover; background-position: center; }
+.scene--zanzibar::before { background-image: url(../assets/img/zanzibar.jpg); background-size: cover; background-position: center; }
+.scene--laikipia::before { background-image: url(../assets/img/laikipia.jpg); background-size: cover; background-position: center; }
+.scene--cape::before { background-image: url(../assets/img/cape.jpg); background-size: cover; background-position: center; }
+.scene--rwanda::before { background-image: url(../assets/img/rwanda.jpg); background-size: cover; background-position: center; }
+.scene--zambezi::before { background-image: url(../assets/img/zambezi.jpg); background-size: cover; background-position: center; }
+.scene--night::before { background-image: url(../assets/img/night.jpg); background-size: cover; background-position: center; }
+.scene--dusk::before { background-image: url(../assets/img/dusk.jpg); background-size: cover; background-position: center; }
+.scene--forest::before { background-image: url(../assets/img/forest.jpg); background-size: cover; background-position: center; }
+.hero__bg.has-photo::before { background-image: url(../assets/img/hero.jpg); background-size: cover; background-position: center 35%; }
+.hero__bg.has-photo .hero__art { display: none; }
+.park-row { grid-template-columns: 56px 1fr auto auto auto; }
+.park-row .thumb { width: 56px; height: 42px; object-fit: cover; background: var(--stone); display: block; }
+.park-card__media.has-photo::after { background: linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.45)); }
+.credits { font-size: 13px; opacity: .8; }
+.credits li { margin-bottom: 6px; }
+.credits-note { font-size: 12px; opacity: .6; margin-top: 24px; }
+@media (max-width: 639px) { .park-row { grid-template-columns: 56px 1fr auto; } }
+
+/* Additional photo scenes */
+.scene--gamedrive::before { background-image: url(../assets/img/gamedrive.jpg), linear-gradient(180deg, #c9a46a, #6b4a24); background-size: cover; background-position: center; }
+.scene--balloon::before { background-image: url(../assets/img/balloon.jpg), linear-gradient(180deg, #f2d59a, #8a5a2a); background-size: cover; background-position: center; }
+.scene--chimp::before { background-image: url(../assets/img/chimp.jpg), linear-gradient(180deg, #8fb385, #1f3a24); background-size: cover; background-position: center; }
+.scene--cheetah::before { background-image: url(../assets/img/cheetah.jpg), linear-gradient(180deg, #e8cf9c, #5a3d20); background-size: cover; background-position: center; }
+.scene--camp::before { background-image: url(../assets/img/camp.jpg), linear-gradient(180deg, #d9bd86, #3a2a18); background-size: cover; background-position: center; }
+.scene--village::before { background-image: url(../assets/img/village.jpg), linear-gradient(180deg, #e0b07a, #5e3a1a); background-size: cover; background-position: center; }
+.scene--rhino::before { background-image: url(../assets/img/rhino.jpg), linear-gradient(180deg, #d3b07a, #4a3a22); background-size: cover; background-position: center; }
+.scene--lion::before { background-image: url(../assets/img/lion.jpg), linear-gradient(180deg, #e2b56c, #4d3418); background-size: cover; background-position: center; }
+.hero__bg.has-photo::before { background-position: center 60%; }
+.hero__bg.has-photo::after { background: linear-gradient(0deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.45) 45%, rgba(0,0,0,.25) 100%); }
+.exp__circle .scene::after { background: none; }
