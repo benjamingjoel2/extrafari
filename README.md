@@ -7,25 +7,28 @@ The site is plain HTML, CSS and JavaScript with no build step or runtime
 dependencies, so it can be hosted anywhere static files are served
 (GitHub Pages, Netlify, Cloudflare Pages, S3).
 
-## Layout
+## Style
 
-The home page follows a full-bleed, module-based structure typical of luxury
-safari operators: a fixed black header with a circular menu button, centred
-logo and orange enquiry button; a full-screen hero with tracked wordmark and
-video control; then alternating dark green, sand and dark brown modules. In
-order: intro with portrait image, country carousel with tab bar, stats row,
-full-bleed journeys band, experiences carousel with circular images, tabbed
-"why travel with us" module, accreditation card carousel, impact block with two
-images, guest reviews, a giant "READY?" call to action, newsletter sign-up and
-a centred footer.
+The visual design follows a premium automotive-brand look: a thin near-black
+top bar with small tracked uppercase navigation; a full-bleed hero slider with a
+wide, bold, uppercase headline, a circular-chevron call to action, red progress
+rings on the slide dots and a pause control; a white editorial story carousel;
+a two-column grid of full-bleed image tiles; a black stats band; guest reviews;
+a grey newsletter band and a dark, centred footer. Red is the only accent.
 
-Interior pages share the same header, footer, typography and colour tokens.
+Type is Archivo (Google Fonts), set at an expanded width for headlines and
+navigation. Colours and sizes live in the `:root` block of `css/styles.css`.
+
+The home page is built from these modules, in order: hero slider (`.hero`),
+story carousel (`#stories`), tile grid (`#experiences`), stats band (`.band`),
+reviews (`.reviews`), a closing call-to-action tile and, on every page, the
+newsletter band and footer.
 
 ## Pages
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Home, structured as described above |
+| `index.html` | Home: hero slider, stories, image tiles, stats, reviews |
 | `safaris.html` | Eight itineraries with region / style / duration filters (state is kept in the URL) |
 | `destinations.html` | Country guides plus a month-by-month season table |
 | `parks.html` | Searchable directory of every national park in Africa, with featured top picks and park selection for enquiries |
