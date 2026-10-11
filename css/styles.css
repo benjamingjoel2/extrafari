@@ -17,7 +17,7 @@
   --grey-blue: #3a3f45;
 
   --font: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --bar-h: 40px;
+  --bar-h: 60px;
   --container: 1180px;
   --gutter: 24px;
 }
@@ -90,12 +90,12 @@ h4, h5, h6 { font-size: 16px; }
 
 /* ---------- Top bar ---------- */
 .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; color: var(--white); }
-.bar { background: var(--ink); }
-.bar-inner { display: flex; align-items: center; justify-content: space-between; height: var(--bar-h); padding: 0 20px; max-width: none; }
+.bar { background: var(--ink); transition: background-color .4s ease, box-shadow .4s ease; }
+.bar-inner { display: flex; align-items: center; justify-content: space-between; height: var(--bar-h); padding: 0 28px; max-width: none; }
 .bar-left, .bar-right { display: flex; align-items: center; }
-.brand { display: inline-flex; align-items: center; gap: 10px; margin-right: 36px; }
-.brand__mark { width: 22px; height: 22px; }
-.brand__word { font-stretch: 125%; font-size: 12px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
+.brand { display: inline-flex; align-items: center; gap: 14px; margin-right: 44px; }
+.brand__mark { width: 42px; height: 42px; flex: none; overflow: visible; }
+.brand__word { font-stretch: 125%; font-size: 13px; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; }
 .nav { display: flex; align-items: center; gap: 48px; }
 .nav a, .bar-right a { font-stretch: 125%; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: .95; }
 .nav a:hover, .bar-right a:hover, .nav a[aria-current="page"] { color: #fff; box-shadow: 0 2px 0 var(--red); }
@@ -121,7 +121,7 @@ h4, h5, h6 { font-size: 16px; }
 }
 
 /* ---------- Hero slider ---------- */
-.hero { position: relative; height: calc(100vh - var(--bar-h)); min-height: 560px; margin-top: var(--bar-h); overflow: hidden; background: var(--ink); color: var(--white); }
+.hero { position: relative; height: 100vh; height: 100svh; min-height: 600px; margin-top: 0; overflow: hidden; background: var(--ink); color: var(--white); }
 .hero-slide { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity .9s ease, visibility .9s; }
 .hero-slide.is-active { opacity: 1; visibility: visible; }
 .hero-slide .scene { position: absolute; inset: 0; }
@@ -473,3 +473,8 @@ body.has-selection { padding-bottom: 80px; }
   .hero__dot.is-active svg .fill { animation: none; stroke-dashoffset: 0; }
   .tile .scene, .tile:hover .scene { transition: none; transform: none; }
 }
+
+/* Home: the bar sits transparent over the hero, then fills in once the page scrolls (or the menu opens) */
+body:has(.hero) .site-header:not(.is-scrolled):not(.menu-open) .bar { background-color: transparent; }
+.hero::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 150px; z-index: 2; pointer-events: none; background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,0)); }
+.site-header.is-scrolled .bar { box-shadow: 0 1px 0 rgba(255,255,255,.08); }

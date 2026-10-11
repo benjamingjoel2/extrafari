@@ -16,6 +16,13 @@ rings on the slide dots and a pause control; a white editorial story carousel;
 a two-column grid of full-bleed image tiles; a black stats band; guest reviews;
 a grey newsletter band and a dark, centred footer. Red is the only accent.
 
+The logo is an X made from two crossing spiral horns: a greater kudu's open
+corkscrew (white) and an eland's tight twist (red). The header uses it inline
+so the white horn follows the text colour; `assets/logo.svg` and
+`assets/favicon.svg` are standalone copies. On the home page the top bar starts
+transparent over the hero and turns solid once the page scrolls or the menu
+opens; interior pages always use the solid bar.
+
 Type is Archivo (Google Fonts), set at an expanded width for headlines and
 navigation. Colours and sizes live in the `:root` block of `css/styles.css`.
 

@@ -9,12 +9,22 @@
     el.textContent = String(new Date().getFullYear());
   });
 
+  /* Header: transparent over the home hero, solid after scrolling */
+  var header = document.querySelector(".site-header");
+  if (header) {
+    var ticking = false;
+    function onScroll() { header.classList.toggle("is-scrolled", window.scrollY > 24); ticking = false; }
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; window.requestAnimationFrame(onScroll); } }, { passive: true });
+    onScroll();
+  }
+
   /* Mobile menu */
   var menuBtn = document.querySelector(".menu-btn");
   var mega = document.getElementById("mega-menu");
   if (menuBtn && mega) {
     function setMenu(open) {
       mega.classList.toggle("is-open", open);
+      if (header) header.classList.toggle("menu-open", open);
       menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
       document.body.style.overflow = open ? "hidden" : "";
     }
