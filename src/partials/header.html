@@ -1,78 +1,67 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="bar">
-      <div class="container bar-inner">
-        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mega-menu">
-          <span class="pill-btn" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-          </span>
-          <span class="label"><span class="label-open">Menu</span><span class="label-close">Close</span></span>
-        </button>
-        <a class="brand" href="index.html" aria-label="Extrafari home">
-          <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
-            <path d="M8 18c3-6 10-8 16-6 4 1 7 4 8 7-3 1-8 0-12 0s-9 1-12-1z" fill="currentColor"/>
-            <path d="M19 19l1 13M20 20l3-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M6 33h28" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-          <span class="brand__word">Extrafari</span>
-        </a>
-        <div class="header-right">
-          <a class="search" href="safaris.html" aria-label="Search safaris">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <div class="bar-inner">
+        <div class="bar-left">
+          <a class="brand" href="index.html" aria-label="Extrafari home">
+            <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+              <path d="M8 18c3-6 10-8 16-6 4 1 7 4 8 7-3 1-8 0-12 0s-9 1-12-1z" fill="currentColor"/>
+              <path d="M19 19l1 13M20 20l3-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M6 33h28" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            <span class="brand__word">Extrafari</span>
           </a>
-          <a class="btn btn--primary" href="contact.html">Enquire now</a>
+          <nav class="nav" aria-label="Primary">
+            <a href="safaris.html">Safaris</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="parks.html">National parks</a>
+            <a href="index.html#experiences">Experiences</a>
+            <a href="about.html">About us</a>
+          </nav>
+        </div>
+        <div class="bar-right">
+          <a class="hide-m" href="parks.html#parks-q">Search</a>
+          <a class="hide-m" href="contact.html">Enquire</a>
+          <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mega-menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            <span class="label"><span class="label-open">Menu</span><span class="label-close">Close</span></span>
+          </button>
         </div>
       </div>
-      <nav class="mega" id="mega-menu" aria-label="Primary">
-        <div class="container">
-          <div class="mega__inner">
-            <div class="mega__col">
-              <h4>Destinations</h4>
-              <a href="destinations.html#kenya">Kenya</a>
-              <a href="destinations.html#tanzania">Tanzania</a>
-              <a href="destinations.html#botswana">Botswana</a>
-              <a href="destinations.html#south-africa">South Africa</a>
-              <a href="destinations.html#namibia">Namibia</a>
-              <a href="destinations.html#zambia">Zambia</a>
-              <a href="destinations.html#uganda-rwanda">Uganda &amp; Rwanda</a>
-              <a href="destinations.html#when-to-go">When to go</a>
-              <a href="parks.html">All national parks in Africa</a>
-              <a href="parks.html#top-parks">Top national parks</a>
-            </div>
-            <div class="mega__col">
-              <h4>Safaris</h4>
-              <a href="safaris.html#great-migration">Great Migration Classic <span class="sub">Kenya &amp; Tanzania</span></a>
-              <a href="safaris.html#okavango-chobe">Okavango &amp; Chobe Waterways <span class="sub">Botswana</span></a>
-              <a href="safaris.html#big-five-luxury">Big Five &amp; Cape Town <span class="sub">South Africa</span></a>
-              <a href="safaris.html#gorillas-savanna">Gorillas &amp; Savanna <span class="sub">Uganda &amp; Rwanda</span></a>
-              <a href="safaris.html#namibia-desert">Namibia Desert &amp; Etosha <span class="sub">Namibia</span></a>
-              <a href="safaris.html">See all safaris</a>
-            </div>
-            <div class="mega__col">
-              <h4>Journeys</h4>
-              <a href="safaris.html?style=classic">Classic safaris</a>
-              <a href="safaris.html?style=luxury">Luxury lodges</a>
-              <a href="safaris.html?style=adventure">Walking &amp; adventure</a>
-              <a href="safaris.html?style=family">Family safaris</a>
-              <a href="safaris.html?style=honeymoon">Honeymoons</a>
-            </div>
-            <div class="mega__col">
-              <h4>Experiences</h4>
-              <a href="index.html#experiences">Game drives</a>
-              <a href="index.html#experiences">Mokoro &amp; boat safaris</a>
-              <a href="index.html#experiences">Hot-air ballooning</a>
-              <a href="index.html#experiences">Walking safaris</a>
-              <a href="index.html#experiences">Gorilla trekking</a>
-              <a href="index.html#experiences">Star beds</a>
-            </div>
-            <div class="mega__col">
-              <h4>About Extrafari</h4>
-              <a href="about.html">Our story</a>
-              <a href="about.html#conservation">Impact &amp; conservation</a>
-              <a href="about.html#team">Our guides</a>
-              <a href="contact.html#faq">FAQ</a>
-              <a href="contact.html">Contact</a>
-            </div>
+      <nav class="mega" id="mega-menu" aria-label="Mobile">
+        <div class="mega__inner">
+          <div class="mega__col">
+            <h4>Safaris</h4>
+            <a href="safaris.html">All safaris</a>
+            <a href="safaris.html?style=classic">Classic</a>
+            <a href="safaris.html?style=luxury">Luxury lodges</a>
+            <a href="safaris.html?style=adventure">Walking &amp; adventure</a>
+            <a href="safaris.html?style=family">Family</a>
+            <a href="safaris.html?style=honeymoon">Honeymoons</a>
+          </div>
+          <div class="mega__col">
+            <h4>Destinations</h4>
+            <a href="destinations.html#kenya">Kenya</a>
+            <a href="destinations.html#tanzania">Tanzania</a>
+            <a href="destinations.html#botswana">Botswana</a>
+            <a href="destinations.html#south-africa">South Africa</a>
+            <a href="destinations.html#namibia">Namibia</a>
+            <a href="destinations.html#zambia">Zambia</a>
+            <a href="destinations.html#uganda-rwanda">Uganda &amp; Rwanda</a>
+            <a href="destinations.html#when-to-go">When to go</a>
+          </div>
+          <div class="mega__col">
+            <h4>National parks</h4>
+            <a href="parks.html">All national parks in Africa</a>
+            <a href="parks.html#top-parks">Top national parks</a>
+          </div>
+          <div class="mega__col">
+            <h4>Extrafari</h4>
+            <a href="index.html#experiences">Experiences</a>
+            <a href="about.html">About us</a>
+            <a href="about.html#conservation">Impact</a>
+            <a href="contact.html#faq">FAQ</a>
+            <a href="contact.html">Enquire</a>
           </div>
         </div>
       </nav>
