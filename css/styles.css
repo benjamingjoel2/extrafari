@@ -3,6 +3,17 @@
    with a wide, bold, uppercase headline and a circular-chevron call to action; white editorial carousel;
    two-column grid of full-bleed image tiles; grey newsletter band; dark centred footer; red as the only accent. */
 
+/* Archivo variable (wdth 62-125, wght 100-900), self-hosted copies of the Google Fonts files */
+@font-face { font-family: "Archivo"; font-style: normal; font-weight: 100 900; font-stretch: 62% 125%; font-display: swap;
+  src: url(../assets/fonts/archivo-vietnamese.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB; }
+@font-face { font-family: "Archivo"; font-style: normal; font-weight: 100 900; font-stretch: 62% 125%; font-display: swap;
+  src: url(../assets/fonts/archivo-latin-ext.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Archivo"; font-style: normal; font-weight: 100 900; font-stretch: 62% 125%; font-display: swap;
+  src: url(../assets/fonts/archivo-latin.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 :root {
   --black: #000000;
   --ink: #181818;
@@ -441,29 +452,33 @@ body.has-selection { padding-bottom: 80px; }
 .scene--forest::before { background-image: linear-gradient(180deg, #4b5a3a 0%, #2c3a24 60%, #141a10 100%); }
 .scene--no-tree::after { background-image: none; }
 .scene--dim::before { filter: brightness(.55); }
-.scene--mara::before { background-image: url(../assets/img/mara.jpg); background-size: cover; background-position: center; }
-.scene--serengeti::before { background-image: url(../assets/img/serengeti.jpg); background-size: cover; background-position: center; }
-.scene--okavango::before { background-image: url(../assets/img/okavango.jpg); background-size: cover; background-position: center; }
-.scene--kruger::before { background-image: url(../assets/img/kruger.jpg); background-size: cover; background-position: center; }
-.scene--gorilla::before { background-image: url(../assets/img/gorilla.jpg); background-size: cover; background-position: center; }
-.scene--namib::before { background-image: url(../assets/img/namib.jpg); background-size: cover; background-position: center; }
-.scene--luangwa::before { background-image: url(../assets/img/luangwa.jpg); background-size: cover; background-position: center; }
-.scene--zanzibar::before { background-image: url(../assets/img/zanzibar.jpg); background-size: cover; background-position: center; }
-.scene--laikipia::before { background-image: url(../assets/img/laikipia.jpg); background-size: cover; background-position: center; }
-.scene--cape::before { background-image: url(../assets/img/cape.jpg); background-size: cover; background-position: center; }
-.scene--rwanda::before { background-image: url(../assets/img/rwanda.jpg); background-size: cover; background-position: center; }
-.scene--zambezi::before { background-image: url(../assets/img/zambezi.jpg); background-size: cover; background-position: center; }
-.scene--night::before { background-image: url(../assets/img/night.jpg); background-size: cover; background-position: center; }
-.scene--dusk::before { background-image: url(../assets/img/dusk.jpg); background-size: cover; background-position: center; }
-.scene--forest::before { background-image: url(../assets/img/forest.jpg); background-size: cover; background-position: center; }
-.scene--gamedrive::before { background-image: url(../assets/img/gamedrive.jpg), linear-gradient(180deg, #c9a46a, #6b4a24); background-size: cover; background-position: center; }
-.scene--balloon::before { background-image: url(../assets/img/balloon.jpg), linear-gradient(180deg, #f2d59a, #8a5a2a); background-size: cover; background-position: center; }
-.scene--chimp::before { background-image: url(../assets/img/chimp.jpg), linear-gradient(180deg, #8fb385, #1f3a24); background-size: cover; background-position: center; }
-.scene--cheetah::before { background-image: url(../assets/img/cheetah.jpg), linear-gradient(180deg, #e8cf9c, #5a3d20); background-size: cover; background-position: center; }
-.scene--camp::before { background-image: url(../assets/img/camp.jpg), linear-gradient(180deg, #d9bd86, #3a2a18); background-size: cover; background-position: center; }
-.scene--village::before { background-image: url(../assets/img/village.jpg), linear-gradient(180deg, #e0b07a, #5e3a1a); background-size: cover; background-position: center; }
-.scene--rhino::before { background-image: url(../assets/img/rhino.jpg), linear-gradient(180deg, #d3b07a, #4a3a22); background-size: cover; background-position: center; }
-.scene--lion::before { background-image: url(../assets/img/lion.jpg), linear-gradient(180deg, #e2b56c, #4d3418); background-size: cover; background-position: center; }
+/* Deferred photos: with JS on (html.lazy-bg), scenes below the first section and inactive hero slides
+   get their photo once js/main.js marks them .bg-in (near the viewport, or after load for the hero). */
+.lazy-bg main > :not(:first-child) .scene:not(.bg-in)::before,
+.lazy-bg .hero-slide:not(.is-active) > .scene:not(.bg-in)::before { background-image: none; }
+.scene--mara::before { background-image: url(../assets/img/mara.webp); background-size: cover; background-position: center; }
+.scene--serengeti::before { background-image: url(../assets/img/serengeti.webp); background-size: cover; background-position: center; }
+.scene--okavango::before { background-image: url(../assets/img/okavango.webp); background-size: cover; background-position: center; }
+.scene--kruger::before { background-image: url(../assets/img/kruger.webp); background-size: cover; background-position: center; }
+.scene--gorilla::before { background-image: url(../assets/img/gorilla.webp); background-size: cover; background-position: center; }
+.scene--namib::before { background-image: url(../assets/img/namib.webp); background-size: cover; background-position: center; }
+.scene--luangwa::before { background-image: url(../assets/img/luangwa.webp); background-size: cover; background-position: center; }
+.scene--zanzibar::before { background-image: url(../assets/img/zanzibar.webp); background-size: cover; background-position: center; }
+.scene--laikipia::before { background-image: url(../assets/img/laikipia.webp); background-size: cover; background-position: center; }
+.scene--cape::before { background-image: url(../assets/img/cape.webp); background-size: cover; background-position: center; }
+.scene--rwanda::before { background-image: url(../assets/img/rwanda.webp); background-size: cover; background-position: center; }
+.scene--zambezi::before { background-image: url(../assets/img/zambezi.webp); background-size: cover; background-position: center; }
+.scene--night::before { background-image: url(../assets/img/night.webp); background-size: cover; background-position: center; }
+.scene--dusk::before { background-image: url(../assets/img/dusk.webp); background-size: cover; background-position: center; }
+.scene--forest::before { background-image: url(../assets/img/forest.webp); background-size: cover; background-position: center; }
+.scene--gamedrive::before { background-image: url(../assets/img/gamedrive.webp), linear-gradient(180deg, #c9a46a, #6b4a24); background-size: cover; background-position: center; }
+.scene--balloon::before { background-image: url(../assets/img/balloon.webp), linear-gradient(180deg, #f2d59a, #8a5a2a); background-size: cover; background-position: center; }
+.scene--chimp::before { background-image: url(../assets/img/chimp.webp), linear-gradient(180deg, #8fb385, #1f3a24); background-size: cover; background-position: center; }
+.scene--cheetah::before { background-image: url(../assets/img/cheetah.webp), linear-gradient(180deg, #e8cf9c, #5a3d20); background-size: cover; background-position: center; }
+.scene--camp::before { background-image: url(../assets/img/camp.webp), linear-gradient(180deg, #d9bd86, #3a2a18); background-size: cover; background-position: center; }
+.scene--village::before { background-image: url(../assets/img/village.webp), linear-gradient(180deg, #e0b07a, #5e3a1a); background-size: cover; background-position: center; }
+.scene--rhino::before { background-image: url(../assets/img/rhino.webp), linear-gradient(180deg, #d3b07a, #4a3a22); background-size: cover; background-position: center; }
+.scene--lion::before { background-image: url(../assets/img/lion.webp), linear-gradient(180deg, #e2b56c, #4d3418); background-size: cover; background-position: center; }
 .hero-slide .scene::before, .tile .scene::before { background-size: cover; background-position: center; }
 .has-photo-bg { background-size: cover; background-position: center; }
 
