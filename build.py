@@ -36,13 +36,17 @@ HEAD = """<!doctype html>
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#181818">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+{preload}  <script>document.documentElement.classList.add("lazy-bg")</script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 """
+
+# Above-the-fold image (CSS background) fetched early on pages that open with one
+PRELOAD = {
+    "index": '  <link rel="preload" href="assets/img/serengeti.webp" as="image" type="image/webp" fetchpriority="high">\n',
+}
 
 def main():
     header = (ROOT / "src/partials/header.html").read_text()
@@ -50,7 +54,7 @@ def main():
     for name, (title, desc, scripts) in PAGES.items():
         body = (ROOT / f"src/pages/{name}.html").read_text()
         extra = "".join(f'  <script src="{s}" defer></script>\n' for s in scripts)
-        html = HEAD.format(title=title, desc=desc) + header + "\n" + body + "\n" + footer + extra + "</body>\n</html>\n"
+        html = HEAD.format(title=title, desc=desc, preload=PRELOAD.get(name, "")) + header + "\n" + body + "\n" + footer + extra + "</body>\n</html>\n"
         (ROOT / f"{name}.html").write_text(html)
         print("built", f"{name}.html")
 

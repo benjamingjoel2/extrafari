@@ -214,4 +214,26 @@
       status.classList.add("is-visible");
     });
   }
+
+  /* Deferred photo backgrounds (see .lazy-bg in styles.css) */
+  if (document.documentElement.classList.contains("lazy-bg")) {
+    var show = function (s) { s.classList.add("bg-in"); };
+    var heroScenes = document.querySelectorAll(".hero .scene");
+    var lazyScenes = Array.prototype.filter.call(document.querySelectorAll("main .scene"), function (s) { return !s.closest(".hero"); });
+    var showHero = function () { heroScenes.forEach(show); };
+    if (document.readyState === "complete") showHero(); else window.addEventListener("load", showHero);
+    if (!("IntersectionObserver" in window)) {
+      lazyScenes.forEach(show);
+    } else {
+      var bgObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var group = e.target.closest("section") || e.target;
+          group.querySelectorAll(".scene").forEach(function (s) { show(s); bgObserver.unobserve(s); });
+          show(e.target); bgObserver.unobserve(e.target);
+        });
+      }, { rootMargin: "600px 0px" });
+      lazyScenes.forEach(function (s) { bgObserver.observe(s); });
+    }
+  }
 })();
