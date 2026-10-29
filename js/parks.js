@@ -50,6 +50,18 @@
     return out;
   }
 
+  /* Self-hosted park photos (WebP). A featured park without its own photo falls back to a site photo. */
+  function cardImage(p) {
+    var sizes = "(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 360px";
+    if (p.slug) {
+      var b = "assets/parks/" + p.slug;
+      return '<img class="park-card__img" loading="lazy" decoding="async" width="640" height="190" src="' + b + '-640.webp" srcset="' + b + '-320.webp 320w, ' + b + '-640.webp 640w" sizes="' + sizes + '" alt="">';
+    }
+    if (p.img) return '<img class="park-card__img" loading="lazy" decoding="async" width="500" height="190" referrerpolicy="no-referrer" src="' + esc(p.img) + '" alt="">';
+    var f = "assets/img/" + esc(p.scene);
+    return '<img class="park-card__img" loading="lazy" decoding="async" width="640" height="190" src="' + f + '-640.webp" alt="">';
+  }
+
   /* Render featured cards */
   var topParks = parks.filter(function (p) { return p.top; }).sort(function (a, b) { return a.rank - b.rank; });
   topParks.forEach(function (p) {
@@ -60,7 +72,7 @@
     card.setAttribute("role", "button");
     card.setAttribute("aria-pressed", "false");
     card.innerHTML =
-      '<div class="park-card__media scene ' + (p.img ? 'has-photo' : 'scene--' + esc(p.scene)) + '"' + (p.img ? ' style="background-image:url(' + esc(p.img.replace('/500px-', '/960px-')) + ')"' : '') + '><span class="rank">' + (p.rank < 10 ? "0" : "") + p.rank + '</span><span class="tag">' + (p.operates ? "Extrafari operates here" : "On request") + '</span></div>' +
+      '<div class="park-card__media">' + cardImage(p) + '<span class="rank">' + (p.rank < 10 ? "0" : "") + p.rank + '</span><span class="tag">' + (p.operates ? "Extrafari operates here" : "On request") + '</span></div>' +
       '<div class="park-card__body"><span class="country" data-hl="country">' + esc(p.country) + '</span><h3 data-hl="name">' + esc(p.name) + '</h3><p>' + esc(p.desc) + '</p>' +
       '<div class="park-card__facts"><div><strong>Best time</strong>' + esc(p.best) + '</div><div><strong>Known for</strong>' + esc(p.wildlife) + '</div>' +
       '<div><strong>Size</strong>' + (p.area ? fmt(p.area) + " km²" : "n/a") + (p.est ? " &middot; established " + p.est : "") + '</div></div>' +
@@ -90,7 +102,7 @@
       row.className = "park-row";
       row.setAttribute("data-key", key(p));
       row.innerHTML =
-        (p.img ? '<img class="thumb" loading="lazy" src="' + esc(p.img.replace('/500px-', '/120px-')) + '" alt="">' : '<span class="thumb"></span>') +
+        (p.slug || p.img ? '<img class="thumb" loading="lazy" decoding="async" width="56" height="42" referrerpolicy="no-referrer" src="' + (p.slug ? 'assets/parks/' + p.slug + '-s.webp' : esc(p.img.replace('/500px-', '/120px-'))) + '" alt="">' : '<span class="thumb"></span>') +
         '<span class="name" data-hl="name">' + esc(p.name) + (p.top ? '<span class="star" title="One of our top picks">&#9733;</span>' : "") + '</span>' +
         '<span class="fact">' + (p.area ? fmt(p.area) + " km²" : "") + '</span>' +
         '<span class="fact">' + (p.est ? "est. " + p.est : "") + '</span>' +

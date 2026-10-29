@@ -1,3 +1,6 @@
+/* Self-hosted Archivo (variable width + weight), latin subset */
+@font-face { font-family: "Archivo"; font-style: normal; font-weight: 400 700; font-stretch: 100% 125%; font-display: swap; src: url(../assets/fonts/archivo-subset.woff2) format("woff2"); }
+
 /* Extrafari — design system
    Style notes: thin near-black top bar with small tracked uppercase navigation; full-bleed hero slider
    with a wide, bold, uppercase headline and a circular-chevron call to action; white editorial carousel;
@@ -371,8 +374,9 @@ th:first-child { background: var(--paper); }
 .park-card:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
 .park-card.is-selected { border-color: var(--red); box-shadow: inset 0 0 0 1px var(--red); }
 .park-card.is-hidden { display: none; }
-.park-card__media { height: 190px; position: relative; display: flex; align-items: flex-start; justify-content: space-between; padding: 14px; background-size: cover; background-position: center; }
-.park-card__media.has-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.4)); }
+.park-card__media { height: 190px; position: relative; display: flex; align-items: flex-start; justify-content: space-between; padding: 14px; background: var(--grey-blue); overflow: hidden; }
+.park-card__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.4)); }
+.park-card__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .park-card__media .rank { position: relative; z-index: 3; font-stretch: 125%; font-weight: 700; font-size: 26px; color: var(--white); line-height: 1; }
 .park-card__media .tag { position: relative; z-index: 3; font-stretch: 125%; font-size: 9px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--white); background: var(--black); padding: 6px 10px; align-self: flex-start; }
 .park-card__body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
@@ -441,30 +445,14 @@ body.has-selection { padding-bottom: 80px; }
 .scene--forest::before { background-image: linear-gradient(180deg, #4b5a3a 0%, #2c3a24 60%, #141a10 100%); }
 .scene--no-tree::after { background-image: none; }
 .scene--dim::before { filter: brightness(.55); }
-.scene--mara::before { background-image: url(../assets/img/mara.jpg); background-size: cover; background-position: center; }
-.scene--serengeti::before { background-image: url(../assets/img/serengeti.jpg); background-size: cover; background-position: center; }
-.scene--okavango::before { background-image: url(../assets/img/okavango.jpg); background-size: cover; background-position: center; }
-.scene--kruger::before { background-image: url(../assets/img/kruger.jpg); background-size: cover; background-position: center; }
-.scene--gorilla::before { background-image: url(../assets/img/gorilla.jpg); background-size: cover; background-position: center; }
-.scene--namib::before { background-image: url(../assets/img/namib.jpg); background-size: cover; background-position: center; }
-.scene--luangwa::before { background-image: url(../assets/img/luangwa.jpg); background-size: cover; background-position: center; }
-.scene--zanzibar::before { background-image: url(../assets/img/zanzibar.jpg); background-size: cover; background-position: center; }
-.scene--laikipia::before { background-image: url(../assets/img/laikipia.jpg); background-size: cover; background-position: center; }
-.scene--cape::before { background-image: url(../assets/img/cape.jpg); background-size: cover; background-position: center; }
-.scene--rwanda::before { background-image: url(../assets/img/rwanda.jpg); background-size: cover; background-position: center; }
-.scene--zambezi::before { background-image: url(../assets/img/zambezi.jpg); background-size: cover; background-position: center; }
-.scene--night::before { background-image: url(../assets/img/night.jpg); background-size: cover; background-position: center; }
-.scene--dusk::before { background-image: url(../assets/img/dusk.jpg); background-size: cover; background-position: center; }
-.scene--forest::before { background-image: url(../assets/img/forest.jpg); background-size: cover; background-position: center; }
-.scene--gamedrive::before { background-image: url(../assets/img/gamedrive.jpg), linear-gradient(180deg, #c9a46a, #6b4a24); background-size: cover; background-position: center; }
-.scene--balloon::before { background-image: url(../assets/img/balloon.jpg), linear-gradient(180deg, #f2d59a, #8a5a2a); background-size: cover; background-position: center; }
-.scene--chimp::before { background-image: url(../assets/img/chimp.jpg), linear-gradient(180deg, #8fb385, #1f3a24); background-size: cover; background-position: center; }
-.scene--cheetah::before { background-image: url(../assets/img/cheetah.jpg), linear-gradient(180deg, #e8cf9c, #5a3d20); background-size: cover; background-position: center; }
-.scene--camp::before { background-image: url(../assets/img/camp.jpg), linear-gradient(180deg, #d9bd86, #3a2a18); background-size: cover; background-position: center; }
-.scene--village::before { background-image: url(../assets/img/village.jpg), linear-gradient(180deg, #e0b07a, #5e3a1a); background-size: cover; background-position: center; }
-.scene--rhino::before { background-image: url(../assets/img/rhino.jpg), linear-gradient(180deg, #d3b07a, #4a3a22); background-size: cover; background-position: center; }
-.scene--lion::before { background-image: url(../assets/img/lion.jpg), linear-gradient(180deg, #e2b56c, #4d3418); background-size: cover; background-position: center; }
-.hero-slide .scene::before, .tile .scene::before { background-size: cover; background-position: center; }
+.scene--gamedrive::before { background-image: linear-gradient(180deg, #c9a46a, #6b4a24); }
+.scene--balloon::before { background-image: linear-gradient(180deg, #f2d59a, #8a5a2a); }
+.scene--chimp::before { background-image: linear-gradient(180deg, #8fb385, #1f3a24); }
+.scene--cheetah::before { background-image: linear-gradient(180deg, #e8cf9c, #5a3d20); }
+.scene--camp::before { background-image: linear-gradient(180deg, #d9bd86, #3a2a18); }
+.scene--village::before { background-image: linear-gradient(180deg, #e0b07a, #5e3a1a); }
+.scene--rhino::before { background-image: linear-gradient(180deg, #d3b07a, #4a3a22); }
+.scene--lion::before { background-image: linear-gradient(180deg, #e2b56c, #4d3418); }
 .has-photo-bg { background-size: cover; background-position: center; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -478,3 +466,20 @@ body.has-selection { padding-bottom: 80px; }
 body:has(.hero) .site-header:not(.is-scrolled):not(.menu-open) .bar { background-color: transparent; }
 .hero::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 150px; z-index: 2; pointer-events: none; background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,0)); }
 .site-header.is-scrolled .bar { box-shadow: 0 1px 0 rgba(255,255,255,.08); }
+
+/* Photos are real <img> elements inside .scene (lazy-loaded, AVIF/WebP); the gradient above is the placeholder */
+.scene > picture { position: absolute; inset: 0; display: block; }
+.scene > picture > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tile .scene > picture > img { transition: transform .8s ease; }
+
+/* Skip rendering work for sections that are far below the fold */
+.band, .reviews, .newsletter, .site-footer { content-visibility: auto; contain-intrinsic-size: auto 600px; }
+
+/* Phones: let the country header's labels wrap instead of pushing the page wider */
+@media (max-width: 639px) {
+  .country-group__head { padding: 16px; gap: 10px; }
+  .country-group__head h3 { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+  .country-group__head .meta { gap: 10px; white-space: normal; text-align: right; }
+  .country-group__head .meta .op { max-width: 9ch; line-height: 1.25; }
+  .country-group__head .meta .n { white-space: nowrap; }
+}

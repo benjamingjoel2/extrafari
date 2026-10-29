@@ -31,6 +31,40 @@ story carousel (`#stories`), tile grid (`#experiences`), stats band (`.band`),
 reviews (`.reviews`), a closing call-to-action tile and, on every page, the
 newsletter band and footer.
 
+## Performance
+
+Images are the main cost on a photo-led site, so the build treats them carefully:
+
+- Photos live as originals in `assets-src/img` and are converted to AVIF and WebP at 640 and 1024 px by
+  `node tools/optimize-images.mjs` (needs `npm i --no-save sharp`). A 1024 px AVIF averages about 45 KB.
+- `python3 build.py` turns every `.scene scene--<photo>` into a `<picture>` with `srcset`/`sizes`, lazy-loaded
+  except the first hero slide, which is preloaded with high priority. Gradients are the placeholder colour.
+- Archivo is self-hosted (`assets/fonts`, latin subset, preloaded, `font-display: swap`), so there is no
+  third-party font request.
+- Park photos are self-hosted WebP in `assets/parks` (`tools/finalize-park-images.mjs`). Parks without a local
+  copy fall back to a lazy hotlink to Wikimedia Commons.
+- `vercel.json` sets long cache lifetimes for fonts, images and park photos. `.vercelignore` keeps source and
+  tooling out of the deployed site.
+
+On a throttled slow-4G profile the home page went from 2.7 MB and a 7.9 s main-image paint to 0.46 MB and 1.1 s.
+
+## Hosting and domain
+
+The site is plain static files, deployed as a Vercel project named `extrafari` (framework preset "Other", no
+build command, output directory = repo root). The production URL is **https://extrafari.tourground.com**.
+
+`tourground.com` is registered at GoDaddy but uses Vercel's nameservers, so all DNS is edited in Vercel
+(Domains, tourground.com), never at GoDaddy. Each brand follows the same pattern:
+
+| Record | Name | Value |
+| --- | --- | --- |
+| ALIAS | `extrafari` | `cname.vercel-dns-017.com` |
+| MX | `extrafari` | `smtp.google.com`, priority 1 |
+| TXT | `extrafari` | `v=spf1 include:_spf.google.com ~all` |
+
+Email is `hello@extrafari.tourground.com`. In Google Workspace Admin, add `extrafari.tourground.com` as a domain
+alias and make sure `hello` exists as a user or group alias.
+
 ## Pages
 
 | File | Purpose |
@@ -92,7 +126,7 @@ sign-ups to a mailing-list service.
 ## Enquiry form
 
 The form validates on the client and, by default, opens the visitor's email
-client with the enquiry pre-filled (a `mailto:` link to `hello@extrafari.com`).
+client with the enquiry pre-filled (a `mailto:` link to `hello@extrafari.tourground.com`).
 
 To submit to a real endpoint instead (Formspree, Netlify Forms, your own API),
 add a `data-endpoint` attribute to the form in `contact.html`:

@@ -1,0 +1,6 @@
+# Source and tooling are not part of the deployed site
+assets-src
+src
+tools
+build.py
+README.md

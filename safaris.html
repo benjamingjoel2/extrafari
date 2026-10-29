@@ -5,14 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Safaris | Extrafari</title>
   <meta name="description" content="Browse Extrafari's signature safaris across Kenya, Tanzania, Botswana, South Africa, Namibia, Zambia, Uganda and Rwanda.">
+  <link rel="canonical" href="https://extrafari.tourground.com/safaris.html">
+  <meta property="og:site_name" content="Extrafari">
+  <meta property="og:type" content="website">
   <meta property="og:title" content="Safaris | Extrafari">
   <meta property="og:description" content="Browse Extrafari's signature safaris across Kenya, Tanzania, Botswana, South Africa, Namibia, Zambia, Uganda and Rwanda.">
-  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://extrafari.tourground.com/safaris.html">
+  <meta property="og:image" content="https://extrafari.tourground.com/assets/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#181818">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/archivo-subset.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -134,7 +137,7 @@
         <div class="grid grid--2" id="safari-list">
 
           <article class="card" id="great-migration" data-region="east" data-style="classic" data-days="10">
-            <div class="card__media scene scene--mara"><span class="tag">Kenya &amp; Tanzania</span></div>
+            <div class="card__media scene scene--mara"><picture><source type="image/avif" srcset="assets/img/mara-640.avif 640w, assets/img/mara-1024.avif 1024w" sizes="(max-width: 639px) 100vw, 580px"><img src="assets/img/mara-1024.webp" srcset="assets/img/mara-640.webp 640w, assets/img/mara-1024.webp 1024w" sizes="(max-width: 639px) 100vw, 580px" alt="" width="1024" height="768" loading="lazy" decoding="async"></picture><span class="tag">Kenya &amp; Tanzania</span></div>
             <div class="card__body">
               <h3>Great Migration Classic</h3>
               <p class="card__meta">10 days &middot; Masai Mara &middot; Serengeti &middot; Ngorongoro Crater</p>
@@ -152,7 +155,7 @@
           </article>
 
           <article class="card" id="okavango-chobe" data-region="southern" data-style="luxury" data-days="8">
-            <div class="card__media scene scene--okavango"><span class="tag">Botswana</span></div>
+            <div class="card__media scene scene--okavango"><picture><source type="image/avif" srcset="assets/img/okavango-640.avif 640w, assets/img/okavango-1024.avif 1024w" sizes="(max-width: 639px) 100vw, 580px"><img src="assets/img/okavango-1024.webp" srcset="assets/img/okavango-640.webp 640w, assets/img/okavango-1024.webp 1024w" sizes="(max-width: 639px) 100vw, 580px" alt="" width="1024" height="683" loading="lazy" decoding="async"></picture><span class="tag">Botswana</span></div>
             <div class="card__body">
               <h3>Okavango &amp; Chobe Waterways</h3>
               <p class="card__meta">8 days &middot; Okavango Delta &middot; Moremi &middot; Chobe River</p>
@@ -170,7 +173,7 @@
           </article>
 
           <article class="card" id="big-five-luxury" data-region="southern" data-style="luxury" data-days="7">
-            <div class="card__media scene scene--kruger"><span class="tag">South Africa</span></div>
+            <div class="card__media scene scene--kruger"><picture><source type="image/avif" srcset="assets/img/kruger-640.avif 640w, assets/img/kruger-1024.avif 1024w" sizes="(max-width: 639px) 100vw, 580px"><img src="assets/img/kruger-1024.webp" srcset="assets/img/kruger-640.webp 640w, assets/img/kruger-1024.webp 1024w" sizes="(max-width: 639px) 100vw, 580px" alt="" width="1024" height="683" loading="lazy" decoding="async"></picture><span class="tag">South Africa</span></div>
             <div class="card__body">
               <h3>Big Five &amp; Cape Town</h3>
               <p class="card__meta">7 days &middot; Sabi Sand &middot; Kruger &middot; Cape Town</p>
@@ -188,7 +191,7 @@
           </article>
 
           <article class="card" id="gorillas-savanna" data-region="east" data-style="adventure" data-days="9">
-            <div class="card__media scene scene--gorilla"><span class="tag">Uganda &amp; Rwanda</span></div>
+            <div class="card__media scene scene--gorilla"><picture><source type="image/avif" srcset="assets/img/gorilla-640.avif 640w, assets/img/gorilla-1024.avif 1024w" sizes="(max-width: 639px) 100vw, 580px"><img src="assets/img/gorilla-1024.webp" srcset="assets/img/gorilla-640.webp 640w, assets/img/gorilla-1024.webp 1024w" sizes="(max-width: 639px) 100vw, 580px" alt="" width="1024" height="779" loading="lazy" decoding="async"></picture><span class="tag">Uganda &amp; Rwanda</span></div>
             <div class="card__body">
               <h3>Gorillas &amp; Savanna</h3>
               <p class="card__meta">9 days &middot; Bwindi &middot; Queen Elizabeth NP &middot; Volcanoes NP</p>
@@ -206,7 +209,7 @@
           </article>
 
           <article class="card" id="namibia-desert" data-region="southern" data-style="adventure" data-days="11">
-            <div class="card__media scene scene--namib"><span class="tag">Namibia</span></div>
+            <div class="card__media scene scene--namib"><picture><source type="image/avif" srcset="assets/img/namib-640.avif 640w, assets/img/namib-1024.avif 1024w" sizes="(max-width: 639px) 100vw, 580px"><img src="assets/img/namib-1024.webp" srcset="assets/img/namib-640.webp 640w, assets/img/namib-1024.webp 1024w" sizes="(max-width: 639px) 100vw, 580px" alt="" width="1024" height="768" loading="lazy" decoding="async"></picture><span class="tag">Namibia</span></div>
             <div class="card__body">
               <h3>Namibia Desert &amp; Etosha</h3>
               <p class="card__meta">11 days &middot; Sossusvlei &middot; Swakopmund &middot; Damaraland &middot; Etosha</p>
@@ -224,7 +227,7 @@
           </article>
 
           <article class="card" id="zambia-walking" data-region="southern" data-style="adventure" data-days="9">
-            <div class="card__media scene scene--luangwa"><span class="tag">Zambia</span></div>
+            <div class="card__media scene scene--luangwa"><picture><source type="image/avif" srcset="assets/img/luangwa-640.avif 640w, assets/img/luangwa-1024.avif 1024w" sizes="(max-width: 639px) 100vw, 580px"><img src="assets/img/luangwa-1024.webp" srcset="assets/img/luangwa-640.webp 640w, assets/img/luangwa-1024.webp 1024w" sizes="(max-width: 639px) 100vw, 580px" alt="" width="1024" height="768" loading="lazy" decoding="async"></picture><span class="tag">Zambia</span></div>
             <div class="card__body">
               <h3>Zambia Walking Safari</h3>
               <p class="card__meta">9 days &middot; South Luangwa &middot; Lower Zambezi &middot; Victoria Falls</p>
@@ -242,7 +245,7 @@
           </article>
 
           <article class="card" id="family-kenya" data-region="east" data-style="family" data-days="8">
-            <div class="card__media scene scene--laikipia"><span class="tag">Kenya</span></div>
+            <div class="card__media scene scene--laikipia"><picture><source type="image/avif" srcset="assets/img/laikipia-640.avif 640w, assets/img/laikipia-1024.avif 1024w" sizes="(max-width: 639px) 100vw, 580px"><img src="assets/img/laikipia-1024.webp" srcset="assets/img/laikipia-640.webp 640w, assets/img/laikipia-1024.webp 1024w" sizes="(max-width: 639px) 100vw, 580px" alt="" width="1024" height="768" loading="lazy" decoding="async"></picture><span class="tag">Kenya</span></div>
             <div class="card__body">
               <h3>Family Safari Kenya</h3>
               <p class="card__meta">8 days &middot; Laikipia &middot; Masai Mara &middot; Nairobi</p>
@@ -260,7 +263,7 @@
           </article>
 
           <article class="card" id="honeymoon-tanzania" data-region="east" data-style="honeymoon" data-days="12">
-            <div class="card__media scene scene--zanzibar"><span class="tag">Tanzania &amp; Zanzibar</span></div>
+            <div class="card__media scene scene--zanzibar"><picture><source type="image/avif" srcset="assets/img/zanzibar-640.avif 640w, assets/img/zanzibar-1024.avif 1024w" sizes="(max-width: 639px) 100vw, 580px"><img src="assets/img/zanzibar-1024.webp" srcset="assets/img/zanzibar-640.webp 640w, assets/img/zanzibar-1024.webp 1024w" sizes="(max-width: 639px) 100vw, 580px" alt="" width="1024" height="680" loading="lazy" decoding="async"></picture><span class="tag">Tanzania &amp; Zanzibar</span></div>
             <div class="card__body">
               <h3>Honeymoon Tanzania &amp; Zanzibar</h3>
               <p class="card__meta">12 days &middot; Tarangire &middot; Serengeti &middot; Zanzibar</p>
