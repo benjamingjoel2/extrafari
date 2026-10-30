@@ -13,7 +13,7 @@ The visual design follows a premium automotive-brand look: a thin near-black
 top bar with small tracked uppercase navigation; a full-bleed hero slider with a
 wide, bold, uppercase headline, a circular-chevron call to action, red progress
 rings on the slide dots and a pause control; a white editorial story carousel;
-a two-column grid of full-bleed image tiles; a black stats band; guest reviews;
+a two-column grid of full-bleed image tiles; a black stats band;
 a grey newsletter band and a dark, centred footer. Red is the only accent.
 
 The logo is an X made from two crossing spiral horns: a greater kudu's open
@@ -28,7 +28,7 @@ navigation. Colours and sizes live in the `:root` block of `css/styles.css`.
 
 The home page is built from these modules, in order: hero slider (`.hero`),
 story carousel (`#stories`), tile grid (`#experiences`), stats band (`.band`),
-reviews (`.reviews`), a closing call-to-action tile and, on every page, the
+a closing call-to-action tile and, on every page, the
 newsletter band and footer.
 
 ## Performance
@@ -62,19 +62,20 @@ build command, output directory = repo root). The production URL is **https://ex
 | MX | `extrafari` | `smtp.google.com`, priority 1 |
 | TXT | `extrafari` | `v=spf1 include:_spf.google.com ~all` |
 
-Email is `hello@extrafari.tourground.com`. In Google Workspace Admin, add `extrafari.tourground.com` as a domain
-alias and make sure `hello` exists as a user or group alias.
+Email is `extrafari@tourground.com` (the owner's `{brand}@tourground.com` format).
 
 ## Pages
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Home: hero slider, stories, image tiles, stats, reviews |
+| `index.html` | Home: hero slider, stories, image tiles, stats |
 | `safaris.html` | Eight itineraries with region / style / duration filters (state is kept in the URL) |
 | `destinations.html` | Country guides plus a month-by-month season table |
 | `parks.html` | Searchable directory of every national park in Africa, with featured top picks and park selection for enquiries |
-| `about.html` | Company story, values, conservation, team |
-| `contact.html` | Enquiry form, contact details, FAQ |
+| `about.html` | Company story, values, conservation |
+| `contact.html` | Enquiry form, email and address, FAQ |
+| `privacy.html`, `terms.html`, `cookies.html` | Privacy policy, booking terms, cookie policy (complete; have a lawyer review them before launch) |
+| `credits.html` | Credits for the Creative Commons photography (required by the licences) |
 | `404.html` | Not-found page (GitHub Pages serves it automatically) |
 
 Shared styles live in `css/styles.css` and behaviour in `js/main.js`. The parks
@@ -126,7 +127,7 @@ sign-ups to a mailing-list service.
 ## Enquiry form
 
 The form validates on the client and, by default, opens the visitor's email
-client with the enquiry pre-filled (a `mailto:` link to `hello@extrafari.tourground.com`).
+client with the enquiry pre-filled (a `mailto:` link to `extrafari@tourground.com`).
 
 To submit to a real endpoint instead (Formspree, Netlify Forms, your own API),
 add a `data-endpoint` attribute to the form in `contact.html`:
@@ -148,16 +149,14 @@ filtering.
 
 ## Placeholders to replace
 
-- Contact email, phone number and office addresses in `contact.html` and the
-  footer of every page.
-- Team names on `about.html`.
-- Prices, itineraries and testimonials, which are illustrative.
+- By owner decision (October 2026) the site shows no phone, WhatsApp, social links, licence numbers,
+  team section or testimonials. Email is `extrafari@tourground.com`; the business address is Kofisi
+  Riverside, 104 Riverside Drive, Nairobi (contact page, footer, legal pages, JSON-LD in `build.py`).
+- Prices and itineraries, which are illustrative ("From" prices).
 - The scenic backgrounds are CSS gradients with silhouettes (the `.scene--*`
   rules in `css/styles.css`). Replace them with photography by setting a
   `background-image` on each `.scene--*::before` rule, or drop `<img>` tags
   into the `.scene` containers.
 - The hero has a play/pause control ready for a background video: add a
   `<video>` inside `.hero__bg` and the button will drive it.
-- The accreditation cards name typical industry bodies as examples; replace
-  them with Extrafari's actual memberships and logos.
-- The guest rating and reviews are illustrative.
+- Have a lawyer review the privacy policy, booking terms and cookie policy.
