@@ -93,6 +93,29 @@ python3 build.py
 
 Page titles, descriptions and per-page scripts are listed in `build.py`.
 
+## Languages
+
+The site is published in English (default, the root HTML files), French (`fr/`), German (`de/`) and
+Spanish (`es/`). Every page is pre-rendered in each language; there is no translation library in the
+browser.
+
+- `python3 build.py` builds the English pages, then runs `node scripts/i18n.mjs`, which writes
+  `fr/`, `de/` and `es/` from the dictionaries in `i18n/{fr,de,es}.json` (`"English text":
+  "translation"`). It translates page text, titles, descriptions, `alt`/`aria-label` text, the
+  messages in `js/main.js`, `js/parks.js` and `js/credits.js`, and the countries, regions and notes
+  in `js/parks-data.js` (per-language copies such as `js/parks.fr.js`). It points links at the same
+  language, adds `hreflang` alternates (en, fr, de, es, x-default) and canonicals, lists every
+  language in `sitemap.xml`, and fills the `<!--i18n:selector:…-->` markers in
+  `src/partials/header.html` with the EN · FR · DE · ES selector (header bar on desktop, menu on
+  smaller screens). Settings are in `i18n/config.json`.
+- After changing copy, run `node scripts/i18n.mjs extract` (lists every string in
+  `i18n/strings.json`) and add new strings to the three dictionaries. `I18N_STRICT=1 python3
+  build.py` fails if any page string has no translation.
+- Park names stay as their official English names in every language; safari names
+  (Great Migration Classic and so on) are product names and stay in English too.
+- Translations were written for this site, not machine translated. Have native speakers review them
+  before launch, the legal pages in particular.
+
 ## National parks directory
 
 `js/parks-data.js` holds 388 national parks across 54 countries. The base list
@@ -160,3 +183,4 @@ filtering.
 - The hero has a play/pause control ready for a background video: add a
   `<video>` inside `.hero__bg` and the button will drive it.
 - Have a lawyer review the privacy policy, booking terms and cookie policy.
+- Have native speakers review the French, German and Spanish dictionaries in `i18n/`.

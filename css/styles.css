@@ -108,9 +108,18 @@ h4, h5, h6 { font-size: 16px; }
 .menu-btn .label-close { display: none; }
 .menu-btn[aria-expanded="true"] .label-open { display: none; }
 .menu-btn[aria-expanded="true"] .label-close { display: inline; }
+/* Language selector (scripts/i18n.mjs) */
+.lang-switch { display: flex; align-items: center; gap: 2px; }
+.bar-right .lang-switch__link, .lang-switch__link { font-stretch: 125%; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 6px 3px; opacity: .8; }
+.lang-switch__link:hover, .lang-switch__link[aria-current] { opacity: 1; box-shadow: 0 2px 0 var(--red); }
+.lang-switch__link:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; opacity: 1; }
+.lang-switch__sep { opacity: .5; font-size: 12px; }
+.lang-switch__sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.mega .lang-switch { padding: 22px 0 0; }
+.mega .lang-switch__link { font-size: 13px; }
 .mega { display: none; }
 @media (max-width: 960px) {
-  .nav, .bar-right .hide-m { display: none; }
+  .nav, .bar-right .hide-m, .bar-right .lang-switch { display: none; }
   .menu-btn { display: inline-flex; }
   .brand { margin-right: 0; }
   .bar-right { gap: 20px; }

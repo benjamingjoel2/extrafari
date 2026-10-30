@@ -1,0 +1,70 @@
+{
+  "out": ".",
+  "relative": true,
+  "siteUrl": "https://extrafari.tourground.com",
+  "locales": [
+    "fr",
+    "de",
+    "es"
+  ],
+  "default": "en",
+  "ogLocale": {
+    "fr": "fr_FR",
+    "de": "de_DE",
+    "es": "es_ES"
+  },
+  "ignore": [
+    "src",
+    "tools",
+    "assets-src",
+    "assets",
+    "css",
+    "js",
+    "scripts",
+    "i18n",
+    "node_modules",
+    ".git",
+    "README.md",
+    "vercel.json"
+  ],
+  "jsFiles": [
+    "js/main.js",
+    "js/parks.js",
+    "js/parks-data.js",
+    "js/credits.js"
+  ],
+  "jsData": {
+    "js/parks-data.js": [
+      "name",
+      "slug",
+      "imgPage",
+      "imgBy",
+      "imgLicense",
+      "scene",
+      "img"
+    ]
+  },
+  "keep": [
+    "Extrafari",
+    "extrafari@tourground.com",
+    "EN",
+    "FR",
+    "DE",
+    "ES",
+    "English",
+    "Français",
+    "Deutsch",
+    "Español",
+    "Great Migration Classic",
+    "Okavango & Chobe Waterways",
+    "Big Five & Cape Town",
+    "Gorillas & Savanna",
+    "Namibia Desert & Etosha",
+    "Zambia Walking Safari",
+    "Family Safari Kenya",
+    "Honeymoon Tanzania & Zanzibar"
+  ],
+  "translateQuery": [
+    "country"
+  ]
+}

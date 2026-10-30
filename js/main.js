@@ -136,7 +136,7 @@
         card.classList.toggle("is-hidden", !ok);
         if (ok) shown += 1;
       });
-      countEl.textContent = shown === 1 ? "1 safari" : shown + " safaris";
+      countEl.textContent = shown === 1 ? "1 safari" : "{n} safaris".replace("{n}", shown);
       emptyEl.classList.toggle("is-visible", shown === 0);
       var next = new URLSearchParams();
       if (region) next.set("region", region);

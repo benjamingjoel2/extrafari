@@ -8,7 +8,7 @@ first-screen hero image and the font, and writes the HTML files to the repo root
     python3 build.py
 Images come from `node tools/optimize-images.mjs` (see that file).
 """
-import pathlib, re, struct
+import pathlib, re, struct, subprocess, os, sys
 
 ROOT = pathlib.Path(__file__).parent
 SITE = "https://extrafari.tourground.com"
@@ -147,5 +147,13 @@ def main():
         + "".join(f"  <url><loc>{u}</loc></url>\n" for u in urls) + "</urlset>\n")
     (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
 
+def localize():
+    """French, German and Spanish copies of every page (scripts/i18n.mjs, dictionaries in i18n/)."""
+    mode = "check" if os.environ.get("I18N_STRICT") else "build"
+    r = subprocess.run(["node", str(ROOT / "scripts/i18n.mjs"), mode])
+    if r.returncode:
+        sys.exit(r.returncode)
+
 if __name__ == "__main__":
     main()
+    localize()
