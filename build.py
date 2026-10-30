@@ -8,7 +8,7 @@ first-screen hero image and the font, and writes the HTML files to the repo root
     python3 build.py
 Images come from `node tools/optimize-images.mjs` (see that file).
 """
-import pathlib, re, struct
+import pathlib, re, struct, subprocess, os, sys
 
 ROOT = pathlib.Path(__file__).parent
 SITE = "https://extrafari.tourground.com"
@@ -25,9 +25,15 @@ PAGES = {
     "parks": ("National parks of Africa | Extrafari",
               "Search every national park in Africa by name, country or region, see Extrafari's top picks, and add parks to a safari enquiry.", ["js/parks-data.js", "js/parks.js"]),
     "about": ("About | Extrafari",
-              "Extrafari is an owner-run African safari operator with teams in Nairobi, Arusha and Cape Town. Meet the planners and guides behind every trip.", []),
+              "Extrafari is an owner-run African safari operator with teams in Nairobi, Arusha and Cape Town. We plan and operate every trip ourselves.", []),
     "credits": ("Photo credits | Extrafari",
                 "Photographers and licences for the imagery used on the Extrafari website.", ["js/credits.js"]),
+    "privacy": ("Privacy policy | Extrafari",
+                "How Extrafari collects, uses and protects the details you share when planning a safari.", []),
+    "terms": ("Booking terms | Extrafari",
+              "The booking terms for a tailor-made Extrafari safari: enquiries, deposits, changes, cancellations, insurance and liability.", []),
+    "cookies": ("Cookie policy | Extrafari",
+                "What the Extrafari website stores in your browser.", []),
     "contact": ("Plan your safari | Extrafari",
                 "Send Extrafari a safari enquiry and receive a tailored proposal within three working days.", []),
 }
@@ -51,9 +57,15 @@ HEAD = """<!doctype html>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/archivo-subset.woff2" as="font" type="font/woff2" crossorigin>
 {preload}  <link rel="stylesheet" href="css/styles.css">
-</head>
+{jsonld}</head>
 <body>
 """
+
+EMAIL = "extrafari@tourground.com"
+# Business address: Kofisi Riverside, Nairobi (premium coworking, owner-approved arrangement).
+JSONLD = ('  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TravelAgency","name":"Extrafari",'
+          '"url":"' + SITE + '/","email":"' + EMAIL + '","address":{"@type":"PostalAddress","streetAddress":"Kofisi Riverside, 104 Riverside Drive",'
+          '"addressLocality":"Nairobi","addressCountry":"KE"},"areaServed":["Kenya","Tanzania","Botswana","South Africa","Namibia","Zambia","Uganda","Rwanda"]}</script>\n')
 
 TOKEN = r"(?<![\w-])"
 TAG = re.compile(r"<(\w+)((?:\s[^>]*)?)>")
@@ -127,12 +139,21 @@ def main():
         url = SITE + "/" + ("" if name == "index" else f"{name}.html")
         urls.append(url)
         extra = "".join(f'  <script src="{s}" defer></script>\n' for s in scripts)
-        html = HEAD.format(title=title, desc=desc, url=url, site=SITE, preload=preload) + page + extra + "</body>\n</html>\n"
+        jsonld = JSONLD if name == "index" else ""
+        html = HEAD.format(title=title, desc=desc, url=url, site=SITE, preload=preload, jsonld=jsonld) + page + extra + "</body>\n</html>\n"
         (ROOT / f"{name}.html").write_text(html)
         print("built", f"{name}.html", "(preload hero)" if preload else "")
     (ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"  <url><loc>{u}</loc></url>\n" for u in urls) + "</urlset>\n")
     (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
 
+def localize():
+    """French, German and Spanish copies of every page (scripts/i18n.mjs, dictionaries in i18n/)."""
+    mode = "check" if os.environ.get("I18N_STRICT") else "build"
+    r = subprocess.run(["node", str(ROOT / "scripts/i18n.mjs"), mode])
+    if r.returncode:
+        sys.exit(r.returncode)
+
 if __name__ == "__main__":
     main()
+    localize()

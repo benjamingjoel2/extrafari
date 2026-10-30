@@ -2,6 +2,11 @@
 (function () {
   "use strict";
   var parks = window.EXTRAFARI_PARKS || [];
+  // Site root, worked out from this script's URL so photos load from every language folder and any host path.
+  var ROOT = (document.currentScript && document.currentScript.src || "").replace(/js\/[^\/]*$/, "");
+  // Whole phrases, so each language version (scripts/i18n.mjs) can word its own plurals.
+  function nParks(n) { return n === 1 ? "1 park" : "{n} parks".replace("{n}", n); }
+  function nCountries(n) { return n === 1 ? "1 country" : "{n} countries".replace("{n}", n); }
   var q = document.getElementById("parks-q");
   if (!q || !parks.length) return;
 
@@ -23,6 +28,8 @@
   var STORE = "extrafari.parks";
   var selected = [];
   try { selected = JSON.parse(sessionStorage.getItem(STORE) || "[]"); } catch (e) { selected = []; }
+  // Drop picks saved on another language version of the site (names and countries differ there).
+  selected = selected.filter(function (k) { return parks.some(function (p) { return key(p) === k; }); });
 
   function key(p) { return p.name + " (" + p.country + ")"; }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
@@ -54,11 +61,11 @@
   function cardImage(p) {
     var sizes = "(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 360px";
     if (p.slug) {
-      var b = "assets/parks/" + p.slug;
+      var b = ROOT + "assets/parks/" + p.slug;
       return '<img class="park-card__img" loading="lazy" decoding="async" width="640" height="190" src="' + b + '-640.webp" srcset="' + b + '-320.webp 320w, ' + b + '-640.webp 640w" sizes="' + sizes + '" alt="">';
     }
     if (p.img) return '<img class="park-card__img" loading="lazy" decoding="async" width="500" height="190" referrerpolicy="no-referrer" src="' + esc(p.img) + '" alt="">';
-    var f = "assets/img/" + esc(p.scene);
+    var f = ROOT + "assets/img/" + esc(p.scene);
     return '<img class="park-card__img" loading="lazy" decoding="async" width="640" height="190" src="' + f + '-640.webp" alt="">';
   }
 
@@ -93,7 +100,7 @@
     g.setAttribute("data-country", c);
     g.innerHTML =
       '<button type="button" class="country-group__head" aria-expanded="false"><h3 data-hl="country">' + esc(c) + '</h3>' +
-      '<span class="meta">' + (op ? '<span class="op">Extrafari operates here</span>' : "") + '<span>' + list[0].region + '</span><span class="n">' + list.length + (list.length === 1 ? " park" : " parks") + '</span>' +
+      '<span class="meta">' + (op ? '<span class="op">Extrafari operates here</span>' : "") + '<span>' + list[0].region + '</span><span class="n">' + nParks(list.length) + '</span>' +
       '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></button>' +
       '<div class="country-group__body"></div>';
     var body = g.querySelector(".country-group__body");
@@ -102,7 +109,7 @@
       row.className = "park-row";
       row.setAttribute("data-key", key(p));
       row.innerHTML =
-        (p.slug || p.img ? '<img class="thumb" loading="lazy" decoding="async" width="56" height="42" referrerpolicy="no-referrer" src="' + (p.slug ? 'assets/parks/' + p.slug + '-s.webp' : esc(p.img.replace('/500px-', '/120px-'))) + '" alt="">' : '<span class="thumb"></span>') +
+        (p.slug || p.img ? '<img class="thumb" loading="lazy" decoding="async" width="56" height="42" referrerpolicy="no-referrer" src="' + (p.slug ? ROOT + 'assets/parks/' + p.slug + '-s.webp' : esc(p.img.replace('/500px-', '/120px-'))) + '" alt="">' : '<span class="thumb"></span>') +
         '<span class="name" data-hl="name">' + esc(p.name) + (p.top ? '<span class="star" title="One of our top picks">&#9733;</span>' : "") + '</span>' +
         '<span class="fact">' + (p.area ? fmt(p.area) + " km²" : "") + '</span>' +
         '<span class="fact">' + (p.est ? "est. " + p.est : "") + '</span>' +
@@ -155,7 +162,7 @@
       });
       g.classList.toggle("is-hidden", visible === 0);
       g.querySelector("h3").innerHTML = hl(c, raw ? raw.split(/\s+/) : []);
-      g.querySelector(".n").textContent = visible + (visible === 1 ? " park" : " parks");
+      g.querySelector(".n").textContent = nParks(visible);
       if (visible) shownCountries++;
       shownAll += visible;
       /* Auto-open groups when the user is actively searching or has narrowed to one country */
@@ -163,7 +170,7 @@
       if (active) { g.classList.add("is-open"); g.querySelector(".country-group__head").setAttribute("aria-expanded", "true"); }
     });
     dirEmpty.classList.toggle("is-visible", shownAll === 0);
-    countEl.textContent = shownAll + (shownAll === 1 ? " park" : " parks") + " in " + shownCountries + (shownCountries === 1 ? " country" : " countries");
+    countEl.textContent = "{parks} in {countries}".replace("{parks}", nParks(shownAll)).replace("{countries}", nCountries(shownCountries));
     clearBtn.style.visibility = raw ? "visible" : "hidden";
 
     var next = new URLSearchParams();

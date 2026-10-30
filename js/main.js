@@ -136,7 +136,7 @@
         card.classList.toggle("is-hidden", !ok);
         if (ok) shown += 1;
       });
-      countEl.textContent = shown === 1 ? "1 safari" : shown + " safaris";
+      countEl.textContent = shown === 1 ? "1 safari" : "{n} safaris".replace("{n}", shown);
       emptyEl.classList.toggle("is-visible", shown === 0);
       var next = new URLSearchParams();
       if (region) next.set("region", region);
@@ -204,13 +204,13 @@
         var button = form.querySelector("[type=submit]"); button.disabled = true;
         fetch(endpoint, { method: "POST", headers: { Accept: "application/json" }, body: data })
           .then(function (res) { if (!res.ok) throw new Error("Request failed"); form.reset(); status.textContent = "Thank you. Your enquiry has been sent and a planner will be in touch within one working day."; status.classList.add("is-visible"); })
-          .catch(function () { status.textContent = "Sorry, something went wrong sending your enquiry. Please email hello@extrafari.tourground.com instead."; status.classList.add("is-visible", "is-error"); })
+          .catch(function () { status.textContent = "Sorry, something went wrong sending your enquiry. Please email extrafari@tourground.com instead."; status.classList.add("is-visible", "is-error"); })
           .finally(function () { button.disabled = false; });
         return;
       }
       var subject = "Safari enquiry" + (data.get("safari") ? ": " + data.get("safari") : "");
-      window.location.href = "mailto:hello@extrafari.tourground.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
-      status.textContent = "Opening your email app with the enquiry pre-filled. If nothing happens, email hello@extrafari.tourground.com directly.";
+      window.location.href = "mailto:extrafari@tourground.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
+      status.textContent = "Opening your email app with the enquiry pre-filled. If nothing happens, email extrafari@tourground.com directly.";
       status.classList.add("is-visible");
     });
   }
