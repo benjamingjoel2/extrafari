@@ -1,6 +1,18 @@
 /* Extrafari — renders site photo credits from assets/img/credits.json */
 (function () {
   var root = (document.currentScript && document.currentScript.src || "").replace(/js\/[^\/]*$/, "");
+
+  /* National park photographs (parks directory), from js/parks-data.js */
+  var parksEl = document.getElementById("parks-credits");
+  var parks = window.EXTRAFARI_PARKS || [];
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  if (parksEl) {
+    parks.filter(function (p) { return p.img; }).forEach(function (p) {
+      var li = document.createElement("li");
+      li.innerHTML = esc(p.name) + ": <a href=\"" + esc(p.imgPage) + "\" rel=\"noopener\" target=\"_blank\"&gt;foto</a>" + (p.imgBy ? " de " + esc(p.imgBy) : "") + (p.imgLicense ? ", " + esc(p.imgLicense) : " (autor y licencia en la página del archivo en Commons)") + ", vía Wikimedia Commons";
+      parksEl.appendChild(li);
+    });
+  }
   var el = document.getElementById("site-credits");
   if (!el) return;
   fetch(root + "assets/img/credits.json").then(function (r) { return r.json(); }).then(function (data) {

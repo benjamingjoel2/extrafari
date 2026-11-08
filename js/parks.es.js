@@ -208,16 +208,6 @@
   }
   selClear.addEventListener("click", function () { selected = []; try { sessionStorage.removeItem(STORE); } catch (e) {} renderSelection(); });
 
-  /* Photo credits */
-  var creditsEl = document.getElementById("parks-credits");
-  if (creditsEl) {
-    parks.filter(function (p) { return p.img; }).forEach(function (p) {
-      var li = document.createElement("li");
-      li.innerHTML = esc(p.name) + ": <a href=\"" + esc(p.imgPage) + "\" rel=\"noopener\" target=\"_blank\"&gt;foto</a>" + (p.imgBy ? " de " + esc(p.imgBy) : "") + (p.imgLicense ? ", " + esc(p.imgLicense) : " (autor y licencia en la página del archivo en Commons)") + ", vía Wikimedia Commons";
-      creditsEl.appendChild(li);
-    });
-  }
-
   apply();
   renderSelection();
 })();
