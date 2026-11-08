@@ -27,7 +27,7 @@ PAGES = {
     "about": ("About | Extrafari",
               "Extrafari is an owner-run African safari operator with teams in Nairobi, Arusha and Cape Town. We plan and operate every trip ourselves.", []),
     "credits": ("Photo credits | Extrafari",
-                "Photographers and licences for the imagery used on the Extrafari website.", ["js/credits.js"]),
+                "Photographers and licences for the imagery used on the Extrafari website.", ["js/parks-data.js", "js/credits.js"]),
     "privacy": ("Privacy policy | Extrafari",
                 "How Extrafari collects, uses and protects your personal data, and your rights.", []),
     "terms": ("Booking terms | Extrafari",
